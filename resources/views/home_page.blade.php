@@ -122,13 +122,16 @@
 																								</div>
 
 																								<div class="nav-item mx-auto me-5">
-																												<button type="button" class="btn btn-outline-secondary" href="/Login_in">
-																																<i class="fas fa-user-circle me-1"></i> Sign in
-																												</button>
+																												<!--<button type="button" class="btn btn-outline-secondary" href="/Login_in"> -->
+																												<a href="Login_in"> <button type="submit" class="btn btn-outline-secondary">
+																																				<i class="fas fa-user-circle me-1"></i> login here
+																																</button>
+																												</a>
 																								</div>
 																								<div class="nav-item mx-auto me-5">
-																												<button type="button" class="btn btn-outline-secondary"><i
-																																				class="fa-sharp fa-solid fa-cart-shopping fa-beat-fade"></i> My Cart</button>
+																												<a href="cart"><button type="button" class="btn btn-outline-secondary">
+																																				<i class="fa-sharp fa-solid fa-cart-shopping fa-beat-fade"></i> My Cart</button>
+																												</a>
 																								</div>
 																				</div>
 																</nav>
@@ -145,13 +148,16 @@
 												<div class="container-fluid align-self-center w-75 bg-body-tertiary main-body">
 																<div class="row">
 																				<h3 class="d-inline col-6">Best Selling Books in 2023</h3>
-																				<a class="d-inline-block fs-5 col-6 text-end" href="#">View All</a>
+																				<a class="d-inline-block fs-5 col-6 text-end" href="/view_all">View All</a>
 																</div>
 																<div class="row my-5">
 																				<div class="col-2">
 																								<div class="card" style="width: 7rem;">
-																												<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																class="card-img-top" alt="...">
+																												<a href="/book_review">
+																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																																				class="card-img-top" alt="...">
+																												</a>
+
 																								</div>
 																				</div>
 																				<div class="col-2">
@@ -185,8 +191,8 @@
 																								</div>
 																				</div>
 																				<div class="row mt-5">
-																								<h3 class="d-inline col-6">Best Reviewed Books</h3>
-																								<a class="d-inline-block fs-5 col-6 text-end" href="#">View All</a>
+																								<h3 class="d-inline col-6">Best Reviewed Books </h3>
+																								<a class="d-inline-block fs-5 col-6 text-end" href="view_all">View All</a>
 																				</div>
 																				<div class="row my-5">
 																								<div class="col-2">
