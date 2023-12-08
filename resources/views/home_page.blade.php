@@ -122,8 +122,8 @@
 																								</div>
 
 																								<div class="nav-item mx-auto me-5">
-																												<!--<button type="button" class="btn btn-outline-secondary" href="/Login_in"> -->
-																												<a href="Login_in"> <button type="submit" class="btn btn-outline-secondary">
+																												<!--<button type="button" class="btn btn-outline-secondary" href="/Login_in">-->
+																												<a href="Login"> <button type="submit" class="btn btn-outline-secondary">
 																																				<i class="fas fa-user-circle me-1"></i> login here
 																																</button>
 																												</a>
@@ -153,7 +153,7 @@
 																<div class="row my-5">
 																				<div class="col-2">
 																								<div class="card" style="width: 7rem;">
-																												<a href="/book_review">
+																												<a href="{{ route('book_review') }}">
 																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
 																																				class="card-img-top" alt="...">
 																												</a>

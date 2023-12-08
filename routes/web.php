@@ -24,11 +24,11 @@ Route::get('/welcome', function () {
 
 Route::get('/', [PostController::class,'home_page'] );
 
-Route::get('/book_review', [PostController::class,'book_review'] );
+Route::get('/book_review', [PostController::class,'book_review'] )->name('book_review');
 
 Route::get('/view_all', [PostController::class,'view_all'] );
 
-Route::get('/Login_in', [PostController::class,'Login_in'] );
+Route::get('/Login', [PostController::class,'Login_in'] );
 
 Route::get('/sign_up', [PostController::class,'sign_up'] );
 
