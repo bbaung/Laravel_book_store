@@ -1,0 +1,94 @@
+
+
+
+												.col-2:hover {
+																transform: scale(1.05);
+																transition: all 0.5s ease;
+												}
+
+												.col-2 {
+																transition: transform 0.3s ease;
+												}
+
+												body {
+																height: 100%;
+																margin: 0;
+																padding: 0;
+												}
+
+												.wrapper {
+																min-height: 100%;
+																margin-bottom: -50px;
+																/* Height of the footer */
+												}
+
+												.footer {
+																height: 75px;
+																padding: 15px 0;
+																position: relative;
+																bottom: 0;
+																width: 100%;
+												}
+
+												.navbar-brand {
+																text-decoration: none;
+																transition: text-decoration 0.5s ease;
+																color: #000;
+																/* Navbar text color */
+												}
+
+												.nav-item button {
+																padding: 8px 16px;
+																/* Adjust button padding */
+																border-radius: 5px;
+																/* Rounded corners */
+																transition: background-color 0.3s ease;
+																/* Smooth color transition */
+												}
+
+												.nav-item button:hover {
+																background-color: #6c757d;
+																/* Darker color on hover */
+																color: #fff;
+																/* Text color on hover */
+												}
+
+												.card {
+																width: 100%;
+																/* Adjust the width of cards to fill the container */
+																border: none;
+																/* Remove default card borders */
+																transition: transform 0.3s ease-in-out;
+																/* Add a smooth transition effect */
+												}
+
+												.card:hover {
+																transform: scale(1.03);
+																/* Scale up the card on hover for emphasis */
+												}
+
+												.footer {
+																height: 100px;
+																/* Increase footer height */
+																background-color: #343a40;
+																/* Darker background color */
+																color: #fff;
+																/* Text color */
+																padding-top: 25px;
+																/* Add top padding for content */
+												}
+
+												.navbar-brand:hover {
+																text-decoration: underline;
+												}
+
+												.main-body {
+																padding-top: 140px;
+												}
+
+												.navbar {
+																background-color: #f8f9fa;
+																/* Light background color */
+																box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+																/* Subtle shadow effect */
+												}

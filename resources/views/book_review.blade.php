@@ -11,42 +11,8 @@
 								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 								<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
 												integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-								<style>
-												body {
-																height: 100%;
-																margin: 0;
-																padding: 0;
-												}
 
-												.wrapper {
-																min-height: 100%;
-																margin-bottom: -100px;
-																/* Height of the footer */
-												}
-
-												.footer {
-																background-color: #f8f9fa;
-																padding: 20px 0;
-																text-align: center;
-																position: absolute;
-																bottom: 0;
-																width: 100%;
-																height: 60px;
-												}
-
-												.navbar-brand {
-																text-decoration: none;
-																transition: text-decoration 0.5s ease;
-												}
-
-												.navbar-brand:hover {
-																text-decoration: underline;
-												}
-
-												.main-body {
-																padding-top: 180px;
-												}
-								</style>
+								<link rel="stylesheet" href="{{ asset('assets/js/css/book_review.css') }}">
 				</head>
 
 				<body>

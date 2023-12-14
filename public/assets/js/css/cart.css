@@ -1,0 +1,47 @@
+
+												body {
+																height: 100%;
+																margin: 0;
+																padding: 0;
+												}
+
+												.wrapper {
+																min-height: 100%;
+																margin-bottom: -100px;
+																/* Height of the footer */
+												}
+
+												.footer {
+																background-color: #f8f9fa;
+																padding: 20px 0;
+																text-align: center;
+																position: absolute;
+																bottom: 0;
+																width: 100%;
+																height: 60px;
+												}
+
+												.navbar-brand {
+																text-decoration: none;
+																transition: text-decoration 0.5s ease;
+												}
+
+												.navbar-brand:hover {
+																text-decoration: underline;
+												}
+
+												.main-body {
+																padding-top: 130px;
+												}
+
+												.cart-list {
+																height: 400px;
+												}
+
+												.input-group {
+																width: 100px;
+												}
+
+												.deleteBtn {
+																border-radius: 50%;
+												}
