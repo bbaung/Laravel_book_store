@@ -22,6 +22,8 @@ Route::get('/welcome', function () {
 //     return "home page";
 // });
 
+Route::view('header', '/header');
+
 Route::get('/', [PostController::class,'home_page'] );
 
 Route::get('/book_review', [PostController::class,'book_review'] )->name('book_review');
