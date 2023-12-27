@@ -141,7 +141,7 @@
 												@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 								</style>
 
-								<link rel="stylesheet" href="{{ asset('assets/js/css/Login_in.css') }}">
+								<link rel="stylesheet" href="{{ asset('assets/css/Login_in.css') }}">
 				</head>
 
 				<body>

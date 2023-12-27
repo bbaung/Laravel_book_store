@@ -4,7 +4,7 @@
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<title>Sign-up | Ludiflex</title>
 
-				<link rel="stylesheet" href="{{ asset('assets/js/css/sign_up.css') }}">
+				<link rel="stylesheet" href="{{ asset('assets/css/sign_up.css') }}">
 </head>
 
 <body>
@@ -34,6 +34,7 @@
 								</div>
 
 								<br>
-								<p>Do you have already account? <a href="/Login_in">Login </a></p>
+								{{-- <p>Do you have already account? <a href="/Login_in">Login </a></p> --}}
 
+								<p>Do you have already account? <a href="{{ route('Login') }}">Login</a></p>
 				</div>

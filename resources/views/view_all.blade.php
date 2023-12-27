@@ -93,7 +93,7 @@
 												<div class="container-fluid align-self-center w-75 main-body">
 																<div class="row">
 																				<h3 class="d-inline col-6">All Books</h3>
-																				<a class="d-inline-block fs-5 col-6 text-end" href="/">Home Menu</a>
+																				<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('home_page') }}">Home Menu</a>
 																</div>
 
 												</div>
