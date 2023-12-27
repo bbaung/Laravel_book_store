@@ -1,14 +1,3 @@
-<h1>
-				View all
-</h1>
-
-<div>
-				<!-- It is quality rather than quantity that matters. - Lucius Annaeus Seneca -->
-</div>
-
-<h1>
-				Book review
-</h1>
 <!DOCTYPE html>
 <html lang="en">
 
