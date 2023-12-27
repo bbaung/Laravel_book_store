@@ -1,104 +1,803 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('header')
 
-				<head>
-								<meta charset="UTF-8">
-								<meta name="viewport" content="width=device-width, initial-scale=1.0">
-								<title>Book_Review</title>
-								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-								<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-												integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-								<style>
-												body {
-																height: 100%;
-																margin: 0;
-																padding: 0;
-												}
+@section('header_footer')
+				<!DOCTYPE html>
+				<html lang="en">
 
-												.wrapper {
-																min-height: 100%;
-																margin-bottom: -100px;
-																/* Height of the footer */
-												}
+								<head>
+												<meta charset="UTF-8">
+												<meta http-equiv="X-UA-Compatible" content="IE=edge">
+												<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-												.footer {
-																background-color: #f8f9fa;
-																padding: 20px 0;
-																text-align: center;
-																position: absolute;
-																bottom: 0;
-																width: 100%;
-																height: 60px;
-												}
+												<!-------- title ----------->
+												<title>ATS-OJT || Online Books Shop</title>
 
-												.navbar-brand {
-																text-decoration: none;
-																transition: text-decoration 0.5s ease;
-												}
+												<!-------- customer style link ----------->
+												<link rel="stylesheet" href="{{ asset('assets/view/css/style.css') }}">
 
-												.navbar-brand:hover {
-																text-decoration: underline;
-												}
+												<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
 
-												.main-body {
-																padding-top: 180px;
-												}
-								</style>
-				</head>
+												<!-------- font awesome cdn link --------->
+												<link rel="stylesheet" href="./fontawesome-free-6.4.2-web/css/all.min.css" />
 
-				<body>
-								<div class="wrapper d-flex flex-column">
-												<div class="w-100 fixed-top bg-body-tertiary mb-5" style="z-index: 1;">
-																<nav class="navbar navbar-expand-lg pt-3">
-																				<div class="container-fluid">
-																								<a class="navbar-brand ms-5" href="#">Book Shop</a>
-																								<div class="navbar-collapse collapse" id="navbarSupportedContent">
-																												<form class="d-flex w-50 mx-auto" role="search">
-																																<input class="form-control me-2" type="" placeholder="Search"
-																																				aria-label="Search">
-																																<button class="btn btn-outline-secondary" type="submit">Search</button>
-																												</form>
+												<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+												<!------- swipper cdn link ------------>
+												<link rel="stylesheet" href="{{ asset('assets/view/css/swiper-bundle.min.css') }}" />
+
+												<script src="{{ asset('assets/view/js/tailwing/tailwing.js') }}"></script>
+
+												{{-- bootstrap link start --}}
+												<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+																integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+												<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+								</head>
+
+								<body>
+
+												<!-------- categories section start  ----------->
+
+												<div class="container-fluid">
+																<!-------- arrivals section start  ----------->
+																<section class="arrivals" id="arrivals">
+
+																				<div class="heading mt-4"></div>
+																				<div class="row">
+
+																								<div class="col-md-12">
+
+																												<div class="mt-5">
+
+																												</div>
+
+																												<!---- Filter buttons -->
+
+																												<div id="myBtnContainer" class="col-md-12">
+																																<!-- button class="btn active" onclick="filterSelection('all')" style="margin-right: 40px;">All Books</button>
+
+																																<button class="btn" onclick="filterSelection('fantasy') " style="margin-right: 5px;"> Fantasy</button>
+																																<button class="btn" onclick="filterSelection('romance')" style="margin-right:5px;"> Romance</button>
+																																<button class="btn" onclick="filterSelection('Science')" style="margin-right: 5px;"> Science</button>
+																																<button class="btn" onclick="filterSelection('crimeDrama')" style="margin-right: 500px;"> Crime-Drama</button -->
+
+																												</div>
+
 																								</div>
 
-																								<div class="nav-item mx-auto me-5">
-																												<button type="button" class="btn btn-outline-secondary">Sign In</button>
-																								</div>
-																								<div class="nav-item mx-auto me-5">
-																												<button type="button" class="btn btn-outline-secondary"><i
-																																				class="fa-sharp fa-solid fa-cart-shopping fa-beat-fade"></i> My Cart</button>
+																				</div>
+
+																				<!--------- arrival start ---------- -->
+																				{{-- <div class="heading mt-4"></div>
+																<div class="btn" style="width:40px;height: 33px;margin-bottom: 14px;">
+																				<a href="#"> <i class='bx bx-home mt-2' style="font-size: 17px;"></i></a>
+																</div>
+																<input class="ml" type="radio" name="group" id="all-btn" value="all"
+																				onclick="history.go(0)" checked="checked">
+																<label class="ml" for="all-btn"> All</label>
+																<input class="" type="radio" name="group" id="bds-btn" value="bds">
+																<label for="bds-btn">Science</label>
+																<input class="" type="radio" name="group" id="nov-btn" value="nov">
+																<label for="nov-btn">Romance</label>
+																<input class="" type="radio" name="group" id="adv-btn" value="adv">
+																<label for="adv-btn">Advanture</label> --}}
+
+																				<div class="swiper arrivals-slider">
+
+																								<div id="paginationList" class="swiper-wrapper">
+
+																												<a href="" class="swiper-slide box nov">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Novel</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv nov">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box adv">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box nov">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv nov">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
 																								</div>
 																				</div>
-																</nav>
 
-																<div class="navbar navbar-expand-lg navbar-light bg-light">
-																				<div class="container-fluid align-self-center w-75">
-																								<a class="navbar-brand" href="#">Fiction</a>
-																								<a class="navbar-brand" href="#">Science</a>
-																								<a class="navbar-brand" href="#">Action</a>
-																								<a class="navbar-brand" href="#">Romance</a>
+																				<div class="swiper arrivals-slider">
+
+																								<div class="swiper-wrapper">
+
+																												<a href="" class="swiper-slide box adv">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box adv">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box adv">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box adv">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv bds">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																								</div>
+																				</div>
+
+																				<!-- --------- arrival start ---------- -->
+																				<!--<div class="swiper arrivals-slider">
+
+																<div class="gallery swiper-wrapper">
+
+																				<a href="" class="swiper-slide box bds">
+																								<div class="image">
+																												<img src="./image/book-1.png" alt="">
+																								</div>
+																								<div class="content">
+																												<h3>Book Name</h3>
+																												<div class="price">2500ks <span> 4500ks</span></div>
+																												<div class="stars">
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star-half-alt"></i>
+																												</div>
+
+																												<div class="btn">
+																																<button>Buy Now</button>
+																												</div>
+																								</div>
+																				</a>
+
+																				<a href="" class="swiper-slide box filterDiv bds">
+																								<div class="image">
+																												<img src="./image/book-1.png" alt="">
+																								</div>
+																								<div class="content">
+																												<h3>Bed Time Story</h3>
+																												<div class="price">2500ks <span> 4500ks</span></div>
+																												<div class="stars">
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star-half-alt"></i>
+																												</div>
+
+																												<div class="btn">
+																																<button>Buy Now</button>
+																												</div>
+																								</div>
+																				</a>
+
+																				<a href="" class="swiper-slide box filterDiv autoBiograpghy">
+																								<div class="image">
+																												<img src="./image/book-1.png" alt="">
+																								</div>
+																								<div class="content">
+																												<h3>Book Name</h3>
+																												<div class="price">2500ks <span> 4500ks</span></div>
+																												<div class="stars">
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star-half-alt"></i>
+																												</div>
+
+																												<div class="btn">
+																																<button>Buy Now</button>
+																												</div>
+																								</div>
+																				</a>
+
+																				<a href="" class="swiper-slide box filterDiv crimeDrama">
+																								<div class="image">
+																												<img src="./image/book-1.png" alt="">
+																								</div>
+																								<div class="content">
+																												<h3>Book Name</h3>
+																												<div class="price">2500ks <span> 4500ks</span></div>
+																												<div class="stars">
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star-half-alt"></i>
+																												</div>
+																												<div class="btn">
+																																<button>Buy Now</button>
+																												</div>
+																								</div>
+																				</a>
+
+																				<a href="" class="swiper-slide box filterDiv crimeDrama romance">
+																								<div class="image">
+																												<img src="./image/book-1.png" alt="">
+																								</div>
+																								<div class="content">
+																												<h3>Book Name</h3>
+																												<div class="price">2500ks <span> 4500ks</span></div>
+																												<div class="stars">
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star"></i>
+																																<i class="fas fa-star-half-alt"></i>
+																												</div>
+
+																												<div class="btn">
+																																<button>Buy Now</button>
+																												</div>
+																								</div>
+																				</a>
+
+																</div>
+												</div>-->
+
+																				<div class="swiper arrivals-slider">
+
+																								<div class="swiper-wrapper">
+
+																												<a href="" class="swiper-slide box romance">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv fantasy">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv autoBiograpghy">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv crimeDrama">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv crimeDrama romance">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																								</div>
+																				</div>
+
+																				<!--------         -------->
+
+																				<div class="swiper arrivals-slider">
+
+																								<div class="swiper-wrapper">
+
+																												<a href="" class="swiper-slide box romance">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv fantasy">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv autoBiograpghy">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv crimeDrama">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv crimeDrama romance">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																								</div>
+																				</div>
+																				<!-------------------->
+
+																				<div class="swiper arrivals-slider">
+
+																								<div class="swiper-wrapper">
+
+																												<a href="" class="swiper-slide box romance">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv fantasy">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv autoBiograpghy">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv crimeDrama">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																												<a href="" class="swiper-slide box filterDiv crimeDrama romance">
+																																<div class="image">
+																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
+																																</div>
+																																<div class="content">
+																																				<h3>Book Name</h3>
+																																				<div class="price">2500ks <span> 4500ks</span></div>
+																																				<div class="stars">
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star"></i>
+																																								<i class="fas fa-star-half-alt"></i>
+																																				</div>
+
+																																				<div class="btn">
+																																								<button>Buy Now</button>
+																																				</div>
+																																</div>
+																												</a>
+
+																								</div>
+																				</div>
+
+																</section>
+																<!-- Pagination bar -->
+																<div class="container">
+																				<div class="row justify-content-center mt-5">
+																								<ul class="pagination pagination-lg">
+																												<button class="control" id="prev" title="Previous page">
+																																< Prev </button>
+																																				<div class="pageNumbers">
+																																								<!--Page Numbers-->
+																																				</div>
+																																				<button class="control" id="next" title="Next page">
+																																								Next >
+																																				</button>
+																								</ul>
 																				</div>
 																</div>
-												</div>
-												<div class="container-fluid align-self-center w-75 main-body">
-																<div class="row">
-																				<h3 class="d-inline col-6">All Books</h3>
-																				<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('home_page') }}">Home Menu</a>
-																</div>
 
 												</div>
 
-								</div>
-								<footer class="footer bg-info-subtle mt-auto">
-												<div class="container text-center">
-																<span class="text-muted">&copy; 2023 Bookshop.com. All Rights Reserved.</span>
-												</div>
-								</footer>
-				</body>
-				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-								integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-				</script>
+												<!-------- arrivals section ends  ----------->
+												<script src="{{ asset('assets/view/js/Pagination.js') }}"></script>
 
-</html>
-<div>
-				<!-- Simplicity is an acquired taste. - Katharine Gerould -->
-</div>
+												<!-------- categories section ends  ----------->
+												<!-------- footer section start  ----------->
+
+												<section class="footer">
+
+																<div class="box-container"></div>
+
+												</section>
+
+												<!-------- footer section ends  ----------->
+
+												<!---- swiper cdn link ---------->
+												<script src="{{ asset('assets/view/js/swiper-bundle.min.js') }}"></script>
+												<!------- customer script link --------->
+												<script src="{{ asset('assets/view/js/script.js') }}"></script>
+
+												{{-- bootstrap script link  --}}
+
+												<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+																integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+												</script>
+												<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+								</body>
+
+				</html>
+@endsection

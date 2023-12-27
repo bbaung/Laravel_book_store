@@ -43,3 +43,5 @@ Route::get('/after_login_view_all', [PostController::class,'after_login_view_all
 Route::get('/cart', [PostController::class,'cart'])->name('cart') ;
 
 Route::view('/header', 'header');
+
+Route::view('/view', 'view_all');
