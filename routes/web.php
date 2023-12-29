@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,3 +46,9 @@ Route::get('/cart', [PostController::class,'cart'])->name('cart') ;
 Route::view('/header', 'header');
 
 Route::view('/view', 'view_all');
+
+// Admin admin panel start
+
+Route::get('/admin/homepage', [AdminController::class, 'home_page'])->name('admin_home_page');
+
+Route::get('/admin/orderstatus', [AdminController::class, 'order_status'])->name('admin_order_status');
