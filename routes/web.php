@@ -60,3 +60,7 @@ Route::get('/admin/addBook', [AdminController::class, 'add_book'])->name('admin_
 Route::get('/admin/editBook', [AdminController::class, 'edit_book'])->name('admin_edit_book');
 
 Route::get('/admin/inventoryStatus', [AdminController::class, 'inventory'])->name('admin_inventory_status');
+
+Route::get('/admin/header', function () {
+    return view('admin.admin_header');
+});

@@ -1,231 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Main Content -->
+@extends('admin.admin_header')
 
-				<head>
-								<meta charset="UTF-8">
-								<meta name="viewport" content="width=device-width, initial-scale=1.0">
-								<title>Admin History || Admin Dashboard || admin_history01</title>
-								<!-- Bootstrap CSS -->
-								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
-								<!-- Font Awesome -->
-								<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-								<style>
-												/* Adjust styles as needed */
-												.navbar-brand-text {
-																margin-right: 20px;
-												}
+@section('admin_header')
+				<div class="col-md-9">
 
-												.notification {
-																margin-right: 20px;
-												}
+								<!-- dev_phyoe start -->
 
-												.sidebar {
-																background-color: #f8f9fa;
-																height: 100vh;
-																display: flex;
-																flex-direction: column;
-																justify-content: center;
-																align-items: center;
-												}
+								<!-- first section start -->
+								<section class="container-fluid container">
 
-												.sidebar-btn {
-																width: 100%;
-																max-width: 100%;
-																/* Adjust maximum width as needed */
-																padding: 10px;
-																border: none;
-																text-align: left;
-																background-color: transparent;
-																transition: background-color 0.3s ease;
-																margin-bottom: 10px;
-																/* Adjust button margin as needed */
-												}
+												<div class="container mt-3">
 
-												.sidebar-btn:hover {
-																background-color: #e9ecef;
-																/* Adjust hover background color */
-												}
+																<div class="jumbo mt-4 rounded p-5 text-white">
 
-												.sidebar-btn i {
-																float: right;
-												}
+																				<div class="row container">
 
-												.footer {
-																background-color: aliceblue;
-												}
+																								<div class="col-md-2">
+																												<div class="card" style="width:100px ; height:100px;">
+																												</div>
 
-												/* dev_phyoe */
-												.jumbo {
-																background: silver;
-												}
+																								</div>
 
-												.admin__history {
-																font-family: 'Courier New', Courier, monospace;
-												}
-								</style>
-				</head>
+																								<div class="col-md-6 admin__history mt-2">
+																												<h5>Admin User</h5>
+																												<h5>Email - hr.admin@gmail.com</h5>
+																												<h5>Role - Editor</h5>
+																								</div>
 
-				<body>
-								<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-												<div class="container">
-																<!-- Book Shop - Brand -->
-																<a class="navbar-brand navbar-brand-text" href="#">Book Shop</a>
-
-																<!-- Admin Dashboard -->
-																<span class="navbar-text text-white">Admin Dashboard</span>
-
-																<!-- Notification -->
-																<span class="notification">
-																				<!-- Replace the placeholder with your notification icon from Font Awesome -->
-																				<i class="fas fa-bell me-3 text-white"></i>
-																				<i class="fas fa-bell me-3 text-white"></i>
-																				<i class="fas fa-bell me-3 text-white"></i>
-																				<!-- You can add a badge or indicator for notifications -->
-																				<!-- Example: <span class="badge badge-danger">3</span> -->
-																</span>
-
-																<!-- My Account and Settings Icon -->
-																<ul class="navbar-nav ml-auto">
-																				<li class="nav-item me-3">
-																								<a class="nav-link" href="#">
-																												<!-- Replace the placeholder with your account icon from Font Awesome -->
-																												<i class="fas fa-user"></i> My Account
-																								</a>
-																				</li>
-																				<li class="nav-item">
-																								<a class="nav-link" href="#">
-																												<!-- Replace the placeholder with your settings icon from Font Awesome -->
-																												<i class="fas fa-cog"></i>
-																								</a>
-																				</li>
-																</ul>
-												</div>
-								</nav>
-								<div class="container-fluid">
-												<div class="row">
-																<!-- Sidebar -->
-																<div class="col-md-3 sidebar">
-																				<button class="sidebar-btn">Profile <i class="fas fa-chevron-right"></i></button>
-																				<button class="sidebar-btn">Add Book <i class="fas fa-chevron-right"></i></button>
-																				<button class="sidebar-btn">Inventory Status <i class="fas fa-chevron-right"></i></button>
-																				<button class="sidebar-btn">Orders <i class="fas fa-chevron-right"></i></button>
+																								<div class="col-md-2 offset-2">
+																												<span><button class="btn btn-outline-success admin__history mt-2">Active</button></span>
+																												<a href="{{ route('admin_history') }}"><span><button
+																																								class="btn btn-outline-danger admin__history mt-2">History</button></span></a>
+																								</div>
+																				</div>
 																</div>
+								</section>
+								<!-- first section end -->
 
-																<!-- Main Content -->
-																<div class="col-md-9">
+								<!-- second section start -->
+								<section class="container-fluid container">
 
-																				<!-- dev_phyoe start -->
+												<div class="container mt-3">
 
-																				<!-- first section start -->
-																				<section class="container-fluid container">
+																<div class="jumbo mt-4 rounded p-5 text-white">
 
-																								<div class="container mt-3">
+																				<div class="row container">
 
-																												<div class="jumbo mt-4 rounded p-5 text-white">
-
-																																<div class="row container">
-
-																																				<div class="col-md-2">
-																																								<div class="card" style="width:100px ; height:100px;">
-																																								</div>
-
-																																				</div>
-
-																																				<div class="col-md-6 admin__history mt-2">
-																																								<h5>Admin User</h5>
-																																								<h5>Email - hr.admin@gmail.com</h5>
-																																								<h5>Role - Editor</h5>
-																																				</div>
-
-																																				<div class="col-md-2 offset-2">
-																																								<span><button
-																																																class="btn btn-outline-success admin__history mt-2">Active</button></span>
-																																								<span><button
-																																																class="btn btn-outline-danger admin__history mt-2">History</button></span>
-																																				</div>
-																																</div>
+																								<div class="col-md-2">
+																												<div class="card" style="width:100px ; height:100px;">
 																												</div>
-																				</section>
-																				<!-- first section end -->
 
-																				<!-- second section start -->
-																				<section class="container-fluid container">
+																								</div>
 
-																								<div class="container mt-3">
+																								<div class="col-md-6 admin__history mt-2">
+																												<h5>Admin User</h5>
+																												<h5>Email - hr.admin@gmail.com</h5>
+																												<h5>Role - Editor</h5>
+																								</div>
 
-																												<div class="jumbo mt-4 rounded p-5 text-white">
-
-																																<div class="row container">
-
-																																				<div class="col-md-2">
-																																								<div class="card" style="width:100px ; height:100px;">
-																																								</div>
-
-																																				</div>
-
-																																				<div class="col-md-6 admin__history mt-2">
-																																								<h5>Admin User</h5>
-																																								<h5>Email - hr.admin@gmail.com</h5>
-																																								<h5>Role - Editor</h5>
-																																				</div>
-
-																																				<div class="col-md-2 offset-2">
-																																								<span><button
-																																																class="btn btn-outline-success admin__history mt-2">Active</button></span>
-																																				</div>
-																																</div>
-																												</div>
-																				</section>
-																				<!-- second section end -->
-
-																				<!-- third section start -->
-																				<section class="container-fluid container">
-
-																								<div class="container mt-3">
-
-																												<div class="jumbo mt-4 rounded p-5 text-white">
-
-																																<div class="row container">
-
-																																				<div class="col-md-2">
-																																								<div class="card" style="width:100px ; height:100px;">
-																																								</div>
-
-																																				</div>
-
-																																				<div class="col-md-6 admin__history mt-2">
-																																								<h5>Admin User</h5>
-																																								<h5>Email - hr.admin@gmail.com</h5>
-																																								<h5>Role - Editor</h5>
-																																				</div>
-
-																																				<div class="col-md-2 offset-2">
-																																								<span><button
-																																																class="btn btn-outline-muted admin__history mt-2 border">Sleep</button></span>
-
-																																				</div>
-																																</div>
-																												</div>
-																				</section>
-																				<!-- third section end -->
-
-																				<!-- dev_phyoe end -->
-
-																				{{-- <h6 class="text-muted offset-10 mt-4" style="font-family:Harrington;"> dev_phyoewai &copy; </h6> --}}
-
+																								<div class="col-md-2 offset-2">
+																												<span><button class="btn btn-outline-success admin__history mt-2">Active</button></span>
+																								</div>
+																				</div>
 																</div>
-												</div>
-								</div>
+								</section>
+								<!-- second section end -->
 
-								<footer class="footer bg-light mt-auto py-3">
-												<div class="container text-center">
-																<span class="text-muted">Book Shop &copy; 2023</span>
-												</div>
-								</footer>
-								<!-- Bootstrap JS -->
-								<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
-												integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
-												crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-				</body>
+								<!-- third section start -->
+								<section class="container-fluid container">
 
-</html>
+												<div class="container mt-3">
+
+																<div class="jumbo mt-4 rounded p-5 text-white">
+
+																				<div class="row container">
+
+																								<div class="col-md-2">
+																												<div class="card" style="width:100px ; height:100px;">
+																												</div>
+
+																								</div>
+
+																								<div class="col-md-6 admin__history mt-2">
+																												<h5>Admin User</h5>
+																												<h5>Email - hr.admin@gmail.com</h5>
+																												<h5>Role - Editor</h5>
+																								</div>
+
+																								<div class="col-md-2 offset-2">
+																												<span><button class="btn btn-outline-muted admin__history mt-2 border">Sleep</button></span>
+
+																								</div>
+																				</div>
+																</div>
+								</section>
+								<!-- third section end -->
+
+								<!-- dev_phyoe end -->
+
+								{{-- <h6 class="text-muted offset-10 mt-4" style="font-family:Harrington;"> dev_phyoewai &copy; </h6> --}}
+
+				</div>
+@endsection
