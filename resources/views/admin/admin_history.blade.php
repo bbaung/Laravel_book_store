@@ -1,10 +1,13 @@
+<div>
+				<!-- Well begun is half done. - Aristotle -->
+</div>
 <!DOCTYPE html>
 <html lang="en">
 
 				<head>
 								<meta charset="UTF-8">
 								<meta name="viewport" content="width=device-width, initial-scale=1.0">
-								<title>Admin History || Admin Dashboard || admin_history01</title>
+								<title>Admin History || Admin Dashboard</title>
 								<!-- Bootstrap CSS -->
 								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" />
 								<!-- Font Awesome -->
@@ -134,7 +137,7 @@
 																																				<div class="col-md-6 admin__history mt-2">
 																																								<h5>Admin User</h5>
 																																								<h5>Email - hr.admin@gmail.com</h5>
-																																								<h5>Role - Editor</h5>
+																																								<h5>Role - admin</h5>
 																																				</div>
 
 																																				<div class="col-md-2 offset-2">
@@ -150,64 +153,66 @@
 
 																				<!-- second section start -->
 																				<section class="container-fluid container">
-
 																								<div class="container mt-3">
+																												<div class="jumbo mt-4 rounded p-4 text-white">
 
-																												<div class="jumbo mt-4 rounded p-5 text-white">
+																																<h3 class="admin__history">History Record</h3>
+																																<div class="table-responsive py-4 text-center">
+																																				<table class="table-bordered admin__history table"
+																																								style="border: 1px solid #0755bb;">
+																																								<thead style="background-color: royalblue;">
+																																												<tr>
+																																																<th>Date</th>
+																																																<th>Action</th>
+																																																<th>Particular</th>
+																																																<th>User phone</th>
+																																																<th>User address</th>
+																																																<th>Block id</th>
 
-																																<div class="row container">
+																																												</tr>
+																																								</thead>
 
-																																				<div class="col-md-2">
-																																								<div class="card" style="width:100px ; height:100px;">
-																																								</div>
+																																								<tbody>
+																																												<tr>
+																																																<td>27-12-2023</td>
+																																																<td>Edit</td>
+																																																<td>hr.resume@gmail.com</td>
+																																																<td>097-709-66017</td>
+																																																<td>New York</td>
+																																																<td>Female</td>
 
-																																				</div>
+																																												</tr>
+																																								</tbody>
 
-																																				<div class="col-md-6 admin__history mt-2">
-																																								<h5>Admin User</h5>
-																																								<h5>Email - hr.admin@gmail.com</h5>
-																																								<h5>Role - Editor</h5>
-																																				</div>
+																																								<tbody>
+																																												<tr>
+																																																<td>27-12-2023</td>
+																																																<td>Add</td>
+																																																<td>hr.resume@gmail.com</td>
+																																																<td>097-709-66017</td>
+																																																<td>New York</td>
+																																																<td>Female</td>
 
-																																				<div class="col-md-2 offset-2">
-																																								<span><button
-																																																class="btn btn-outline-success admin__history mt-2">Active</button></span>
-																																				</div>
+																																												</tr>
+																																								</tbody>
+
+																																								<tbody>
+																																												<tr>
+																																																<td>27-12-2023</td>
+																																																<td>Del</td>
+																																																<td>hr.resume@gmail.com</td>
+																																																<td>097-709-66017</td>
+																																																<td>New York</td>
+																																																<td>Female</td>
+																																												</tr>
+																																								</tbody>
+
+																																				</table>
 																																</div>
 																												</div>
+																								</div>
 																				</section>
 																				<!-- second section end -->
-
-																				<!-- third section start -->
-																				<section class="container-fluid container">
-
-																								<div class="container mt-3">
-
-																												<div class="jumbo mt-4 rounded p-5 text-white">
-
-																																<div class="row container">
-
-																																				<div class="col-md-2">
-																																								<div class="card" style="width:100px ; height:100px;">
-																																								</div>
-
-																																				</div>
-
-																																				<div class="col-md-6 admin__history mt-2">
-																																								<h5>Admin User</h5>
-																																								<h5>Email - hr.admin@gmail.com</h5>
-																																								<h5>Role - Editor</h5>
-																																				</div>
-
-																																				<div class="col-md-2 offset-2">
-																																								<span><button
-																																																class="btn btn-outline-muted admin__history mt-2 border">Sleep</button></span>
-
-																																				</div>
-																																</div>
-																												</div>
-																				</section>
-																				<!-- third section end -->
 
 																				<!-- dev_phyoe end -->
 

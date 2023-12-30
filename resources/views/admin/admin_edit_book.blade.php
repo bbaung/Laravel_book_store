@@ -1,7 +1,6 @@
 <div>
-				<!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
+				<!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
 </div>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -268,23 +267,23 @@
 																								</div>
 
 																								<!-- custom -->
-																								<div class="row">
+																								{{-- <div class="row">
 																												<span class="col-md-1 offset-8 text-center"><svg class="mt-4"
 																																				xmlns="http://www.w3.org/2000/svg" height="16" width="20"
 																																				viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
 																																				<path
 																																								d="M64 96c0-35.3 28.7-64 64-64H512c35.3 0 64 28.7 64 64V352H512V96H128V352H64V96zM0 403.2C0 392.6 8.6 384 19.2 384H620.8c10.6 0 19.2 8.6 19.2 19.2c0 42.4-34.4 76.8-76.8 76.8H76.8C34.4 480 0 445.6 0 403.2zM281 209l-31 31 31 31c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-48-48c-9.4-9.4-9.4-24.6 0-33.9l48-48c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM393 175l48 48c9.4 9.4 9.4 24.6 0 33.9l-48 48c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l31-31-31-31c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z" />
 																																</svg></span>
-																												<h6 class="col-md-2 text-muted mt-4" style="font-family:Harrington;">dev_phyoewai</h6>
-																								</div>
-																								<!-- custom -->
-
-																</div>
-																</section>
-																<!-- section 2 end -->
-																<!-- dev_phyoe end -->
+																												{{-- <h6 class="col-md-2 text-muted mt-4" style="font-family:Harrington;">dev_phyoewai</h6> --}}
+																</div> --}}
+																<!-- custom -->
 
 												</div>
+												</section>
+												<!-- section 2 end -->
+												<!-- dev_phyoe end -->
+
+								</div>
 								</div>
 								</div>
 								<footer class="footer bg-light mt-auto py-3">
