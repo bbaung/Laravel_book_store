@@ -31,6 +31,7 @@ Route::get('/book_review', [PostController::class,'book_review'] )->name('book_r
 Route::get('/view_all', [PostController::class,'view_all'] )->name('view_all');
 
 Route::get('/Login', [PostController::class,'Login_in'] )->name("Login");
+Route::post('/Login', [PostController::class,'store'] );
 
 Route::get('/sign_up', [PostController::class,'sign_up'] )->name('sign_up');
 
