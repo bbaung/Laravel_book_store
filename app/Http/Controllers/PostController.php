@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class PostController extends Controller
 {
@@ -20,9 +22,11 @@ class PostController extends Controller
     }
 
     public function Login_in (){
-        return view("Login_in");
+        
+        return view("Login_in");    
     }
 
+   
     public function sign_up (){
         return view("sign_up");
     }
@@ -42,4 +46,24 @@ class PostController extends Controller
     public function cart (){
         return view("cart");
     }
+    public function store(Request $request){
+        $validate = Validator::make($request->all(),[
+            'email' => [
+                'required',
+                'email',
+                'regex:/^[a-zA-Z0-9_.+-]+@.*\.com$/i',
+            ],
+            'password' => 'required|min:6'
+        ], [
+            'email.regex' => 'The email must be in a valid format with @ and end with .com',
+        ]);
+        
+        if($validate->fails()){
+            return redirect('Login')-> withErrors($validate);
+        }
+        else   
+        header("Location: /after_login_home_page");
+        exit();
+    }
+    
 }
