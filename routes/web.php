@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::get('/book_review', [PostController::class,'book_review'] )->name('book_r
 Route::get('/view_all', [PostController::class,'view_all'] )->name('view_all');
 
 Route::get('/Login', [PostController::class,'Login_in'] )->name("Login");
+Route::post('/Login', [PostController::class,'store'] );
 
 Route::get('/sign_up', [PostController::class,'sign_up'] )->name('sign_up');
 
@@ -45,3 +47,21 @@ Route::get('/cart', [PostController::class,'cart'])->name('cart') ;
 Route::view('/header', 'header');
 
 Route::view('/view', 'view_all');
+
+// Admin admin panel start
+
+Route::get('/admin/homepage', [AdminController::class, 'home_page'])->name('admin_home_page');
+
+Route::get('/admin/history', [AdminController::class, 'history'])->name('admin_history');
+
+Route::get('/admin/orderstatus', [AdminController::class, 'order_status'])->name('admin_order_status');
+
+Route::get('/admin/addBook', [AdminController::class, 'add_book'])->name('admin_add_book');
+
+Route::get('/admin/editBook', [AdminController::class, 'edit_book'])->name('admin_edit_book');
+
+Route::get('/admin/inventoryStatus', [AdminController::class, 'inventory'])->name('admin_inventory_status');
+
+Route::get('/admin/header', function () {
+    return view('admin.admin_header');
+});
