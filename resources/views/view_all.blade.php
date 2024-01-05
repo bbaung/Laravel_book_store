@@ -1,803 +1,773 @@
-@extends('header')
-
-@section('header_footer')
-				<!DOCTYPE html>
-				<html lang="en">
-
-								<head>
-												<meta charset="UTF-8">
-												<meta http-equiv="X-UA-Compatible" content="IE=edge">
-												<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-												<!-------- title ----------->
-												<title>ATS-OJT || Online Books Shop</title>
-
-												<!-------- customer style link ----------->
-												<link rel="stylesheet" href="{{ asset('assets/view/css/style.css') }}">
-
-												<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
-
-												<!-------- font awesome cdn link --------->
-												<link rel="stylesheet" href="./fontawesome-free-6.4.2-web/css/all.min.css" />
-
-												<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-												<!------- swipper cdn link ------------>
-												<link rel="stylesheet" href="{{ asset('assets/view/css/swiper-bundle.min.css') }}" />
-
-												<script src="{{ asset('assets/view/js/tailwing/tailwing.js') }}"></script>
-
-												{{-- bootstrap link start --}}
-												<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-																integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-												<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-
-								</head>
-
-								<body>
-
-												<!-------- categories section start  ----------->
-
-												<div class="container-fluid">
-																<!-------- arrivals section start  ----------->
-																<section class="arrivals" id="arrivals">
-
-																				<div class="heading mt-4"></div>
-																				<div class="row">
-
-																								<div class="col-md-12">
-
-																												<div class="mt-5">
-
-																												</div>
-
-																												<!---- Filter buttons -->
-
-																												<div id="myBtnContainer" class="col-md-12">
-																																<!-- button class="btn active" onclick="filterSelection('all')" style="margin-right: 40px;">All Books</button>
-
-																																<button class="btn" onclick="filterSelection('fantasy') " style="margin-right: 5px;"> Fantasy</button>
-																																<button class="btn" onclick="filterSelection('romance')" style="margin-right:5px;"> Romance</button>
-																																<button class="btn" onclick="filterSelection('Science')" style="margin-right: 5px;"> Science</button>
-																																<button class="btn" onclick="filterSelection('crimeDrama')" style="margin-right: 500px;"> Crime-Drama</button -->
-
-																												</div>
-
-																								</div>
-
-																				</div>
-
-																				<!--------- arrival start ---------- -->
-																				{{-- <div class="heading mt-4"></div>
-																<div class="btn" style="width:40px;height: 33px;margin-bottom: 14px;">
-																				<a href="#"> <i class='bx bx-home mt-2' style="font-size: 17px;"></i></a>
-																</div>
-																<input class="ml" type="radio" name="group" id="all-btn" value="all"
-																				onclick="history.go(0)" checked="checked">
-																<label class="ml" for="all-btn"> All</label>
-																<input class="" type="radio" name="group" id="bds-btn" value="bds">
-																<label for="bds-btn">Science</label>
-																<input class="" type="radio" name="group" id="nov-btn" value="nov">
-																<label for="nov-btn">Romance</label>
-																<input class="" type="radio" name="group" id="adv-btn" value="adv">
-																<label for="adv-btn">Advanture</label> --}}
-
-																				<div class="swiper arrivals-slider">
-
-																								<div id="paginationList" class="swiper-wrapper">
-
-																												<a href="" class="swiper-slide box nov">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Novel</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv nov">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box adv">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box nov">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv nov">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																								</div>
-																				</div>
-
-																				<div class="swiper arrivals-slider">
-
-																								<div class="swiper-wrapper">
-
-																												<a href="" class="swiper-slide box adv">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box adv">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box adv">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box adv">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv bds">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																								</div>
-																				</div>
-
-																				<!-- --------- arrival start ---------- -->
-																				<!--<div class="swiper arrivals-slider">
-
-																<div class="gallery swiper-wrapper">
-
-																				<a href="" class="swiper-slide box bds">
-																								<div class="image">
-																												<img src="./image/book-1.png" alt="">
-																								</div>
-																								<div class="content">
-																												<h3>Book Name</h3>
-																												<div class="price">2500ks <span> 4500ks</span></div>
-																												<div class="stars">
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star-half-alt"></i>
-																												</div>
-
-																												<div class="btn">
-																																<button>Buy Now</button>
-																												</div>
-																								</div>
-																				</a>
-
-																				<a href="" class="swiper-slide box filterDiv bds">
-																								<div class="image">
-																												<img src="./image/book-1.png" alt="">
-																								</div>
-																								<div class="content">
-																												<h3>Bed Time Story</h3>
-																												<div class="price">2500ks <span> 4500ks</span></div>
-																												<div class="stars">
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star-half-alt"></i>
-																												</div>
-
-																												<div class="btn">
-																																<button>Buy Now</button>
-																												</div>
-																								</div>
-																				</a>
-
-																				<a href="" class="swiper-slide box filterDiv autoBiograpghy">
-																								<div class="image">
-																												<img src="./image/book-1.png" alt="">
-																								</div>
-																								<div class="content">
-																												<h3>Book Name</h3>
-																												<div class="price">2500ks <span> 4500ks</span></div>
-																												<div class="stars">
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star-half-alt"></i>
-																												</div>
-
-																												<div class="btn">
-																																<button>Buy Now</button>
-																												</div>
-																								</div>
-																				</a>
-
-																				<a href="" class="swiper-slide box filterDiv crimeDrama">
-																								<div class="image">
-																												<img src="./image/book-1.png" alt="">
-																								</div>
-																								<div class="content">
-																												<h3>Book Name</h3>
-																												<div class="price">2500ks <span> 4500ks</span></div>
-																												<div class="stars">
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star-half-alt"></i>
-																												</div>
-																												<div class="btn">
-																																<button>Buy Now</button>
-																												</div>
-																								</div>
-																				</a>
-
-																				<a href="" class="swiper-slide box filterDiv crimeDrama romance">
-																								<div class="image">
-																												<img src="./image/book-1.png" alt="">
-																								</div>
-																								<div class="content">
-																												<h3>Book Name</h3>
-																												<div class="price">2500ks <span> 4500ks</span></div>
-																												<div class="stars">
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star"></i>
-																																<i class="fas fa-star-half-alt"></i>
-																												</div>
-
-																												<div class="btn">
-																																<button>Buy Now</button>
-																												</div>
-																								</div>
-																				</a>
-
-																</div>
-												</div>-->
-
-																				<div class="swiper arrivals-slider">
-
-																								<div class="swiper-wrapper">
-
-																												<a href="" class="swiper-slide box romance">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv fantasy">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv autoBiograpghy">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv crimeDrama">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv crimeDrama romance">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																								</div>
-																				</div>
-
-																				<!--------         -------->
-
-																				<div class="swiper arrivals-slider">
-
-																								<div class="swiper-wrapper">
-
-																												<a href="" class="swiper-slide box romance">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv fantasy">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv autoBiograpghy">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv crimeDrama">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv crimeDrama romance">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																								</div>
-																				</div>
-																				<!-------------------->
-
-																				<div class="swiper arrivals-slider">
-
-																								<div class="swiper-wrapper">
-
-																												<a href="" class="swiper-slide box romance">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv fantasy">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv autoBiograpghy">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv crimeDrama">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																												<a href="" class="swiper-slide box filterDiv crimeDrama romance">
-																																<div class="image">
-																																				<img src="{{ asset('assets/view/image/book-1.png') }}" alt="">
-																																</div>
-																																<div class="content">
-																																				<h3>Book Name</h3>
-																																				<div class="price">2500ks <span> 4500ks</span></div>
-																																				<div class="stars">
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star"></i>
-																																								<i class="fas fa-star-half-alt"></i>
-																																				</div>
-
-																																				<div class="btn">
-																																								<button>Buy Now</button>
-																																				</div>
-																																</div>
-																												</a>
-
-																								</div>
-																				</div>
-
-																</section>
-																<!-- Pagination bar -->
-																<div class="container">
-																				<div class="row justify-content-center mt-5">
-																								<ul class="pagination pagination-lg">
-																												<button class="control" id="prev" title="Previous page">
-																																< Prev </button>
-																																				<div class="pageNumbers">
-																																								<!--Page Numbers-->
-																																				</div>
-																																				<button class="control" id="next" title="Next page">
-																																								Next >
-																																				</button>
-																								</ul>
-																				</div>
-																</div>
-
-												</div>
-
-												<!-------- arrivals section ends  ----------->
-												<script src="{{ asset('assets/view/js/Pagination.js') }}"></script>
-
-												<!-------- categories section ends  ----------->
-												<!-------- footer section start  ----------->
-
-												<section class="footer">
-
-																<div class="box-container"></div>
-
-												</section>
-
-												<!-------- footer section ends  ----------->
-
-												<!---- swiper cdn link ---------->
-												<script src="{{ asset('assets/view/js/swiper-bundle.min.js') }}"></script>
-												<!------- customer script link --------->
-												<script src="{{ asset('assets/view/js/script.js') }}"></script>
-
-												{{-- bootstrap script link  --}}
-
-												<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-																integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-												</script>
-												<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-								</body>
-
-				</html>
-@endsection
+ျ<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View All || </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Google Font -->
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+          rel="stylesheet"/>
+
+      <!-- animate.css cdn link -->
+        <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+          <!-- viewall.css -->
+        <link rel="stylesheet" href="{{asset('assets/css/viewall.css')}}" />
+
+        <!--  
+          @yield('style')
+
+          {{-- <link rel="stylesheet" href="{{ asset('assets/js/css/home_page.css') }}"> --}}
+        -->
+
+  <style>
+            .english{
+                font-family: Cambria,Arial,SansSerif;
+            }
+            .bigtitle{
+                font-family: 'Courier New', Courier, monospace;
+              
+            }
+            .myQuote{
+                font-family: SansSerif;
+                font-style: italic;      
+            }
+
+            /* ----------------------- */
+            /* Define styles for the card */
+            .card {
+            background: #9bc9f7;
+            /* Other styles for the card */
+            }
+
+            /* Styles for the card header */
+            .card-header {
+            background: rgb(121, 234, 238);
+            border-radius: 5px;
+            /* Other styles for the card header */
+            }
+
+            /* Styles for the card block */
+            .card-block {
+            background: #9bc9f7;
+            /* Other styles for the card block */
+            }
+
+            /* Additional hover effect for the card */
+            .card:hover {
+            transform: scale(1.05); /* Example: Increase size on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Example: Add a shadow on hover */
+            /* Add any other style changes for the hover effect */
+            }
+
+            /* Example hover effect for the button inside the card */
+            .card:hover .btn {
+            background-color: orange; /* Change button color on hover */
+            /* Add other style changes for the button on hover */
+            }
+
+            .card {
+                /* ... */
+                transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+                }
+            /* ------------------------ */
+
+            /* pagination css start  */
+            .pagination {
+              font-family: Arial, sans-serif;
+            }
+
+            .pagination ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              display: flex;
+            }
+
+            .pagination li {
+              margin: 5px;
+            }
+
+            .pagination a {
+              padding: 8px 12px;
+              text-decoration: none;
+              border: 1px solid #ddd;
+              color: #333;
+              transition: background-color 0.3s ease;
+            }
+
+            .pagination a:hover {
+              background-color: #2ebede;
+            }
+
+            .pagination .active a {
+              background-color: #efdc5f;
+              color: #fff;
+            }
+
+            /* pagination css end */
+
+        /* pagination custom s */
+            .pagination {
+            font-family: Arial, sans-serif;
+            }
+
+            .pagination ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            }
+
+            .pagination li {
+            margin: 5px;
+            }
+
+            .pagination a {
+            padding: 8px 12px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            color: #333;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            border-radius: 4px;
+            }
+
+            .pagination a:hover {
+            background-color: #f5f5f5;
+            border-color: #aaa;
+            color: #000;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            }
+
+            .pagination .active a {
+            background-color: #eee52e;
+            color: #fff;
+            border-color: #f5e83f;
+            }
+        /* pagination custom e */
+
+  </style>
+
+</head>
+<body>
+
+    <section class="container container-fluid">
+        <div class="wrapper d-flex flex-column">
+        
+            <nav class="navbar navbar-expand-lg bg-body-tertiary pt-4 fixed-top w-100 mb-5" style="z-index: 1;">
+                <div class="container-fluid">
+                    <a class="navbar-brand ms-5" href="#">Book Shop</a>
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                        <form class="d-flex w-50 mx-auto" role="search">
+                            <input class="form-control me-2" type="" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-secondary" type="submit">Search</button>
+                        </form>
+                    </div>
+
+                    <div class="nav-item mx-auto me-5">
+                        <!--<button type="button" class="btn btn-outline-secondary" href="/Login_in">-->
+                        <a href="{{ route('Login') }}"> <button type="submit" class="btn btn-outline-secondary">
+                                <i class="fas fa-user-circle me-1"></i> login here
+                            </button>
+                        </a>
+                    </div>
+                    <div class="nav-item mx-auto me-5">
+                        <a href="{{ route('cart') }}"><button type="button" class="btn btn-outline-secondary">
+                                <i class="fa-sharp fa-solid fa-cart-shopping fa-beat-fade"></i> My Cart</button>
+                        </a>
+                    </div>
+
+                </div>
+            </nav>
+    </section>
+
+        <!-- --dev_phyoewai start-- -->
+        <!-- first section start -->
+        <section class="container container-fluid">
+          <div class="wrapper py-2 my-2">
+
+              <div class="container-fluid row py-1 mt-3">
+ 
+                <div class="col-md-7">
+
+                  <div id="buttons" class="my-4">
+                    <button class="button-value" onclick="filterProduct('all')">All</button>
+                    <button class="button-value" onclick="filterProduct('Topwear')">
+                      Science
+                    </button>
+                    <button class="button-value" onclick="filterProduct('Bottomwear')">
+                      Romance
+                    </button>
+                    <button class="button-value" onclick="filterProduct('Jacket')">
+                      Advanture
+                    </button>
+                    <button class="button-value" onclick="filterProduct('Watch')">
+                      Horror
+                    </button>
+                  </div>
+
+                </div>
+                
+                <div class="col-md-5">
+                  <div id="search-container" class="">
+                        <div class="row">
+                          
+                              <div class="col-md-8 my-1">
+                                  <input
+                                    type="search"
+                                    id="search-input"
+                                    placeholder="Search book name here.."
+                                  />
+                              </div>
+
+                              <div class="col-md-4 col-ms-6">
+                                <button id="search">Search</button>
+                              </div>
+                          
+                        </div>
+                  </div>
+                </div>  
+                  
+              </div>
+
+            <!--div id="products" class="my-4"></div-->
+            
+          </div>
+
+        </section>
+        <!-- first section end -->
+        <!-- --dev_phyoewai end-- -->
+
+      <!-- second section start -->
+      <section class="section-data pb-1">
+          <div class="container container-fluid py-1 pb-1">
+              
+              <div class="row pb-1">
+
+                  <div class="col-md-3 dev-left">
+
+                      <div class="card" style="background: #eff2f6">
+                          <div class="card-header text-center" style="background: 
+                          rgb(49, 65, 70); border-radius: 5px">
+                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                          </div>
+                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand" style="animation-delay: 0ms">Book Name <hr class="col-md-8 offset-2"></h3>
+                              <p class="text-center text-warning">
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star-half-stroke"></span>
+                              </p>
+                              <p class="text-black text-center bigtitle" style="font-size: larger;">
+                                 <!--     not work      -->
+                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                              </p>
+                              <!-- Button -->
+                             <div class="col-md-6 offset-md-4">
+                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                             </div>            
+                          </div>
+                      </div>
+                  </div>
+  
+                  <div class="col-md-3 dev-center">
+
+                    <div class="card" style="background: #eff2f6">
+                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                            <p class="text-center text-warning">
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star-half-stroke"></span>
+                            </p>
+                            <p class="text-black text-center bigtitle" style="font-size: larger;">
+                               <!--     not work      -->
+                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                            </p>
+                            <!-- Button -->
+                           <div class="col-md-6 offset-md-4">
+                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i></button>
+                           </div>            
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-md-3 dev-center">
+
+                    <div class="card" style="background: #eff2f6">
+                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                            <p class="text-center text-warning">
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star-half-stroke"></span>
+                            </p>
+                            <p class="text-black text-center bigtitle" style="font-size: larger;">
+                               <!--     not work      -->
+                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                            </p>
+                            <!-- Button -->
+                           <div class="col-md-6 offset-md-4">
+                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                           </div>            
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="col-md-3 dev-right">
+
+                      <div class="card" style="background: #eff2f6">
+                          <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                          </div>
+                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                              <p class="text-center text-warning">
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star-half-stroke"></span>
+                              </p>
+                              <p class="text-black text-center bigtitle" style="font-size: larger;">
+                                 <!--     not work      -->
+                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                              </p>
+                              <!-- Button -->
+                             <div class="col-md-6 offset-md-4">
+                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                             </div>            
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- second section end -->
+
+      <!-- third section start -->
+      <section class="section-data pb-2">
+        <div class="container container-fluid py-1 pb-1  pt-1">
+            
+            <div class="row">
+
+                <div class="col-md-3 dev-left">
+
+                    <div class="card" style="background: #eff2f6">
+                        <div class="card-header text-center" style="background: 
+                        rgb(49, 65, 70); border-radius: 5px">
+                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand" style="animation-delay: 0ms">Book Name <hr class="col-md-8 offset-2"></h3>
+                            <p class="text-center text-warning">
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star-half-stroke"></span>
+                            </p>
+                            <p class="text-black text-center bigtitle" style="font-size: larger;">
+                               <!--     not work      -->
+                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                            </p>
+                            <!-- Button -->
+                           <div class="col-md-6 offset-md-4">
+                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                           </div>            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 dev-center">
+
+                  <div class="card" style="background: #eff2f6">
+                      <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                          <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                      </div>
+                      <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                          <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                          <p class="text-center text-warning">
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star-half-stroke"></span>
+                          </p>
+                          <p class="text-black text-center bigtitle" style="font-size: larger;">
+                             <!--     not work      -->
+                             <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                          </p>
+                          <!-- Button -->
+                         <div class="col-md-6 offset-md-4">
+                            <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i></button>
+                         </div>            
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-md-3 dev-center">
+
+                  <div class="card" style="background: #eff2f6">
+                      <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                          <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                      </div>
+                      <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                          <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                          <p class="text-center text-warning">
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star"></span>
+                              <span class="fa-solid fa-star-half-stroke"></span>
+                          </p>
+                          <p class="text-black text-center bigtitle" style="font-size: larger;">
+                             <!--     not work      -->
+                             <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                          </p>
+                          <!-- Button -->
+                         <div class="col-md-6 offset-md-4">
+                            <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                         </div>            
+                      </div>
+                  </div>
+              </div>
+
+                <div class="col-md-3 dev-right">
+
+                    <div class="card" style="background: #eff2f6">
+                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                            <p class="text-center text-warning">
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star-half-stroke"></span>
+                            </p>
+                            <p class="text-black text-center bigtitle" style="font-size: larger;">
+                               <!--     not work      -->
+                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                            </p>
+                            <!-- Button -->
+                           <div class="col-md-6 offset-md-4">
+                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                           </div>            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      <!-- third section end -->
+
+      <!-- fourth section start -->
+     <section class="section-data pb-2">
+          <div class="container container-fluid py-1 pb-1  pt-1">
+              
+              <div class="row">
+
+                  <div class="col-md-3 dev-left">
+
+                      <div class="card" style="background: #eff2f6">
+                          <div class="card-header text-center" style="background: 
+                          rgb(49, 65, 70); border-radius: 5px">
+                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                          </div>
+                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand" style="animation-delay: 0ms">Book Name <hr class="col-md-8 offset-2"></h3>
+                              <p class="text-center text-warning">
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star-half-stroke"></span>
+                              </p>
+                              <p class="text-black text-center bigtitle" style="font-size: larger;">
+                                 <!--     not work      -->
+                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                              </p>
+                              <!-- Button -->
+                             <div class="col-md-6 offset-md-4">
+                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                             </div>            
+                          </div>
+                      </div>
+                  </div>
+  
+                  <div class="col-md-3 dev-center">
+
+                    <div class="card" style="background: #eff2f6">
+                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                            <p class="text-center text-warning">
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star-half-stroke"></span>
+                            </p>
+                            <p class="text-black text-center bigtitle" style="font-size: larger;">
+                               <!--     not work      -->
+                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                            </p>
+                            <!-- Button -->
+                           <div class="col-md-6 offset-md-4">
+                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i></button>
+                           </div>            
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-md-3 dev-center">
+
+                    <div class="card" style="background: #eff2f6">
+                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                        </div>
+                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                            <p class="text-center text-warning">
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star"></span>
+                                <span class="fa-solid fa-star-half-stroke"></span>
+                            </p>
+                            <p class="text-black text-center bigtitle" style="font-size: larger;">
+                               <!--     not work      -->
+                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                            </p>
+                            <!-- Button -->
+                           <div class="col-md-6 offset-md-4">
+                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                           </div>            
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="col-md-3 dev-right">
+
+                      <div class="card" style="background: #eff2f6">
+                          <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
+                          </div>
+                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
+                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
+                              <p class="text-center text-warning">
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star"></span>
+                                  <span class="fa-solid fa-star-half-stroke"></span>
+                              </p>
+                              <p class="text-black text-center bigtitle" style="font-size: larger;">
+                                 <!--     not work      -->
+                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+                              </p>
+                              <!-- Button -->
+                             <div class="col-md-6 offset-md-4">
+                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
+                             </div>            
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <!-- fourth section end -->
+
+      <!-- pagination section start -->
+    <section class="container mt-4">
+      <div class="pagination col-md-4 offset-md-5">
+        <ul id="paginationList">
+          <!-- Pagination links will be dynamically added here -->
+        </ul>
+      </div>
+    </section>  
+      <!-- pagination section end -->
+
+      <div class="container col-md-2 mt-4 py-4" style="color: rgb(151, 163, 172);font-style: italic;"><h6>dev_phyoewai &copy;</h6></div>
+       
+    <footer class="footer bg-info-subtle mt-auto">
+      <div class="container text-center">
+          <span class="text-muted">&copy; 2023 Bookshop.com. All Rights Reserved.</span>
+      </div>
+    </footer>
+
+
+  <!--
+    @yield('header_footer')
+  -->
+
+     <script>
+        const card = document.querySelector('.card');
+    
+        card.addEventListener('mouseover', function() {
+          this.style.transform = 'scale(1.05)'; // Enlarge the card
+          this.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)'; // Add shadow
+          // Add any other style changes you want on hover
+        });
+    
+        card.addEventListener('mouseout', function() {
+          this.style.transform = 'scale(1)'; // Restore original size
+          this.style.boxShadow = 'none'; // Remove shadow
+          // Restore any other original styles
+        });
+      </script>
+
+      <!-- pagination s -->
+      <script>
+                // const itemsPerPage = 10; // Items per page
+                // const totalItems = 40; // Total items in your list
+                // const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+                // const paginationList = document.getElementById("paginationList");
+
+                function createPagination() {
+                for (let i = 1; i <= totalPages; i++) {
+                    const li = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = "#";
+                    link.textContent = i;
+                    li.appendChild(link);
+                    paginationList.appendChild(li);
+
+                    link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    setActivePage(i);
+                    displayItems(i);
+                    });
+                }
+                }
+
+                function setActivePage(pageNumber) {
+                const paginationLinks = document.querySelectorAll(".pagination a");
+                paginationLinks.forEach((link, index) => {
+                    if (index + 1 === pageNumber) {
+                    link.parentElement.classList.add("active");
+                    } else {
+                    link.parentElement.classList.remove("active");
+                    }
+                });
+                }
+
+                function displayItems(pageNumber) {
+                // Logic to display items for the selected page
+                // Replace this with your own logic to show items
+                console.log(`Displaying items for page ${pageNumber}`);
+                }
+
+                // Initialize pagination
+                createPagination();
+                setActivePage(1); // Set first page as active by default
+                displayItems(1); // Display items for the first page by default
+</script>
+      <!-- pagination e -->
+
+      <script>
+const itemsPerPage = 10; // Items per page
+const totalItems = 40; // Total items in your list
+const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+const paginationList = document.getElementById("paginationList");
+
+function createPagination() {
+  for (let i = 1; i <= totalPages; i++) {
+    const li = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = i;
+    li.appendChild(link);
+    paginationList.appendChild(li);
+
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      setActivePage(i);
+      displayItems(i);
+    });
+
+    link.addEventListener("mouseover", function () {
+      link.style.backgroundColor = "#f5f5f5";
+      link.style.borderColor = "#aaa";
+      link.style.color = "#000";
+    });
+
+    link.addEventListener("mouseout", function () {
+      if (!link.parentElement.classList.contains("active")) {
+        link.style.backgroundColor = "";
+        link.style.borderColor = "#ddd";
+        link.style.color = "#333";
+      }
+    });
+  }
+}
+
+function setActivePage(pageNumber) {
+  const paginationLinks = document.querySelectorAll(".pagination a");
+  paginationLinks.forEach((link, index) => {
+    if (index + 1 === pageNumber) {
+      link.parentElement.classList.add("active");
+      link.style.backgroundColor = "#007bff";
+      link.style.borderColor = "#007bff";
+      link.style.color = "#fff";
+    } else {
+      link.parentElement.classList.remove("active");
+      link.style.backgroundColor = "";
+      link.style.borderColor = "#ddd";
+      link.style.color = "#333";
+    }
+  });
+}
+
+function displayItems(pageNumber) {
+  // Logic to display items for the selected page
+  // Replace this with your own logic to show items
+  console.log(`Displaying items for page ${pageNumber}`);
+}
+
+// Initialize pagination
+createPagination();
+setActivePage(1); // Set first page as active by default
+displayItems(1); // Display items for the first page by default
+
+</script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+<!-- @yield('script') -->
+
+</html>
+
+<!--div>
+    When there is no desire, all things are at peace. - Laozi 
+</div-->
