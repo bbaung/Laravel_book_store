@@ -27,7 +27,11 @@
 								<div class="input-box">
 												<input type="password" class="input-field" placeholder="Confirm Password" autocomplete="off" required>
 								</div>
-
+								{{-- implement AMM --}}
+								<div class="input-box">
+												<input type="password" class="input-field" placeholder="Address" autocomplete="off" required>
+								</div>
+								{{-- implement AMM end --}}
 								<div class="input-submit">
 												<button class="submit-btn" id="submit"></button>
 												<label for="submit">Sign-up</label>

@@ -12,7 +12,16 @@
 @section('header_footer')
 <div class="container-fluid
 								align-self-center w-75 bg-body-tertiary main-body">
-				<div class="row">
+
+				<div class="row mt-5">
+								<h3 class="d-inline col-6"></h3>
+								<a class="d-inline-block fs-5 col-6 text-end" href=""></a>
+				</div>
+				<div class="row mt-5">
+								<h3 class="d-inline col-6"></h3>
+								<a class="d-inline-block fs-5 col-6 text-end" href=""></a>
+				</div>
+				<div class="row mt-5">
 								<h3 class="d-inline col-6">Best Selling Books in 2023</h3>
 								<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
 				</div>

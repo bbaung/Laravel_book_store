@@ -1,773 +1,887 @@
-ျ<!DOCTYPE html>
+ျ
+<!DOCTYPE html>
 <html lang="en">
 
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View All || </title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+				<head>
+								<meta charset="UTF-8">
+								<meta name="viewport" content="width=device-width, initial-scale=1.0">
+								<title>View All || </title>
 
-        <!-- Google Font -->
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
-          rel="stylesheet"/>
+								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+								<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-      <!-- animate.css cdn link -->
-        <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+								<!-- Google Font -->
+								<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
 
-          <!-- viewall.css -->
-        <link rel="stylesheet" href="{{asset('assets/css/viewall.css')}}" />
+								<!-- animate.css cdn link -->
+								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-        <!--  
-          @yield('style')
+								<!-- viewall.css -->
+								<link rel="stylesheet" href="{{ asset('assets/css/viewall.css') }}" />
 
-          {{-- <link rel="stylesheet" href="{{ asset('assets/js/css/home_page.css') }}"> --}}
-        -->
+								<style>
+												.english {
+																font-family: Cambria, Arial, SansSerif;
+												}
 
-  <style>
-            .english{
-                font-family: Cambria,Arial,SansSerif;
-            }
-            .bigtitle{
-                font-family: 'Courier New', Courier, monospace;
-              
-            }
-            .myQuote{
-                font-family: SansSerif;
-                font-style: italic;      
-            }
+												.bigtitle {
+																font-family: 'Courier New', Courier, monospace;
+												}
 
-            /* ----------------------- */
-            /* Define styles for the card */
-            .card {
-            background: #9bc9f7;
-            /* Other styles for the card */
-            }
+												.myQuote {
+																font-family: SansSerif;
+																font-style: italic;
+												}
 
-            /* Styles for the card header */
-            .card-header {
-            background: rgb(121, 234, 238);
-            border-radius: 5px;
-            /* Other styles for the card header */
-            }
+												/* ----------------------- */
+												/* Define styles for the card */
+												.card {
+																background: #9bc9f7;
+																/* Other styles for the card */
+												}
 
-            /* Styles for the card block */
-            .card-block {
-            background: #9bc9f7;
-            /* Other styles for the card block */
-            }
+												/* Styles for the card header */
+												.card-header {
+																background: rgb(121, 234, 238);
+																border-radius: 5px;
+																/* Other styles for the card header */
+												}
 
-            /* Additional hover effect for the card */
-            .card:hover {
-            transform: scale(1.05); /* Example: Increase size on hover */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Example: Add a shadow on hover */
-            /* Add any other style changes for the hover effect */
-            }
+												/* Styles for the card block */
+												.card-block {
+																background: #9bc9f7;
+																/* Other styles for the card block */
+												}
 
-            /* Example hover effect for the button inside the card */
-            .card:hover .btn {
-            background-color: orange; /* Change button color on hover */
-            /* Add other style changes for the button on hover */
-            }
+												/* Additional hover effect for the card */
+												.card:hover {
+																transform: scale(1.05);
+																/* Example: Increase size on hover */
+																box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+																/* Example: Add a shadow on hover */
+																/* Add any other style changes for the hover effect */
+												}
 
-            .card {
-                /* ... */
-                transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
-                }
-            /* ------------------------ */
+												/* Example hover effect for the button inside the card */
+												.card:hover .btn {
+																background-color: orange;
+																/* Change button color on hover */
+																/* Add other style changes for the button on hover */
+												}
 
-            /* pagination css start  */
-            .pagination {
-              font-family: Arial, sans-serif;
-            }
+												.card {
+																/* ... */
+																transition: transform 0.3s, box-shadow 0.3s;
+																/* Add transition for smooth effect */
+												}
 
-            .pagination ul {
-              list-style: none;
-              padding: 0;
-              margin: 0;
-              display: flex;
-            }
+												/* ------------------------ */
+												/* pagination css start  */
+												.pagination {
+																font-family: Arial, sans-serif;
+												}
 
-            .pagination li {
-              margin: 5px;
-            }
+												.pagination ul {
+																list-style: none;
+																padding: 0;
+																margin: 0;
+																display: flex;
+												}
 
-            .pagination a {
-              padding: 8px 12px;
-              text-decoration: none;
-              border: 1px solid #ddd;
-              color: #333;
-              transition: background-color 0.3s ease;
-            }
+												.pagination li {
+																margin: 5px;
+												}
 
-            .pagination a:hover {
-              background-color: #2ebede;
-            }
+												.pagination a {
+																padding: 8px 12px;
+																text-decoration: none;
+																border: 1px solid #ddd;
+																color: #333;
+																transition: background-color 0.3s ease;
+												}
 
-            .pagination .active a {
-              background-color: #efdc5f;
-              color: #fff;
-            }
+												.pagination a:hover {
+																background-color: #2ebede;
+												}
 
-            /* pagination css end */
+												.pagination .active a {
+																background-color: #efdc5f;
+																color: #fff;
+												}
 
-        /* pagination custom s */
-            .pagination {
-            font-family: Arial, sans-serif;
-            }
+												/* pagination css end */
+												/* pagination custom s */
+												.pagination {
+																font-family: Arial, sans-serif;
+												}
 
-            .pagination ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            }
+												.pagination ul {
+																list-style: none;
+																padding: 0;
+																margin: 0;
+																display: flex;
+												}
 
-            .pagination li {
-            margin: 5px;
-            }
+												.pagination li {
+																margin: 5px;
+												}
 
-            .pagination a {
-            padding: 8px 12px;
-            text-decoration: none;
-            border: 1px solid #ddd;
-            color: #333;
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-            border-radius: 4px;
-            }
+												.pagination a {
+																padding: 8px 12px;
+																text-decoration: none;
+																border: 1px solid #ddd;
+																color: #333;
+																transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+																border-radius: 4px;
+												}
 
-            .pagination a:hover {
-            background-color: #f5f5f5;
-            border-color: #aaa;
-            color: #000;
-            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-            }
+												.pagination a:hover {
+																background-color: #f5f5f5;
+																border-color: #aaa;
+																color: #000;
+																transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+												}
 
-            .pagination .active a {
-            background-color: #eee52e;
-            color: #fff;
-            border-color: #f5e83f;
-            }
-        /* pagination custom e */
+												.pagination .active a {
+																background-color: #eee52e;
+																color: #fff;
+																border-color: #f5e83f;
+												}
 
-  </style>
+												/* pagination custom e */
+								</style>
 
-</head>
-<body>
+				</head>
 
-    <section class="container container-fluid">
-        <div class="wrapper d-flex flex-column">
-        
-            <nav class="navbar navbar-expand-lg bg-body-tertiary pt-4 fixed-top w-100 mb-5" style="z-index: 1;">
-                <div class="container-fluid">
-                    <a class="navbar-brand ms-5" href="#">Book Shop</a>
-                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                        <form class="d-flex w-50 mx-auto" role="search">
-                            <input class="form-control me-2" type="" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-secondary" type="submit">Search</button>
-                        </form>
-                    </div>
+				<body>
 
-                    <div class="nav-item mx-auto me-5">
-                        <!--<button type="button" class="btn btn-outline-secondary" href="/Login_in">-->
-                        <a href="{{ route('Login') }}"> <button type="submit" class="btn btn-outline-secondary">
-                                <i class="fas fa-user-circle me-1"></i> login here
-                            </button>
-                        </a>
-                    </div>
-                    <div class="nav-item mx-auto me-5">
-                        <a href="{{ route('cart') }}"><button type="button" class="btn btn-outline-secondary">
-                                <i class="fa-sharp fa-solid fa-cart-shopping fa-beat-fade"></i> My Cart</button>
-                        </a>
-                    </div>
+								<section class="container-fluid container">
+												<div class="wrapper d-flex flex-column">
 
-                </div>
-            </nav>
-    </section>
+																<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top w-100 mb-5 pt-4" style="z-index: 1;">
+																				<div class="container-fluid">
+																								<a class="navbar-brand ms-5" href="#">Book Shop</a>
+																								<div class="navbar-collapse collapse" id="navbarSupportedContent">
+																												<form class="d-flex w-50 mx-auto" role="search">
+																																<input class="form-control me-2" type="" placeholder="Search"
+																																				aria-label="Search">
+																																<button class="btn btn-outline-secondary" type="submit">Search</button>
+																												</form>
+																								</div>
 
-        <!-- --dev_phyoewai start-- -->
-        <!-- first section start -->
-        <section class="container container-fluid">
-          <div class="wrapper py-2 my-2">
+																								<div class="nav-item mx-auto me-5">
+																												<!--<button type="button" class="btn btn-outline-secondary" href="/Login_in">-->
+																												<a href="{{ route('Login') }}"> <button type="submit" class="btn btn-outline-secondary">
+																																				<i class="fas fa-user-circle me-1"></i> login here
+																																</button>
+																												</a>
+																								</div>
+																								<div class="nav-item mx-auto me-5">
+																												<a href="{{ route('cart') }}"><button type="button" class="btn btn-outline-secondary">
+																																				<i class="fa-sharp fa-solid fa-cart-shopping fa-beat-fade"></i> My Cart</button>
+																												</a>
+																								</div>
 
-              <div class="container-fluid row py-1 mt-3">
- 
-                <div class="col-md-7">
+																				</div>
+																</nav>
+								</section>
 
-                  <div id="buttons" class="my-4">
-                    <button class="button-value" onclick="filterProduct('all')">All</button>
-                    <button class="button-value" onclick="filterProduct('Topwear')">
-                      Science
-                    </button>
-                    <button class="button-value" onclick="filterProduct('Bottomwear')">
-                      Romance
-                    </button>
-                    <button class="button-value" onclick="filterProduct('Jacket')">
-                      Advanture
-                    </button>
-                    <button class="button-value" onclick="filterProduct('Watch')">
-                      Horror
-                    </button>
-                  </div>
+								<!-- --dev_phyoewai start-- -->
+								<!-- first section start -->
+								<section class="container-fluid container">
+												<div class="wrapper my-2 py-2">
 
-                </div>
-                
-                <div class="col-md-5">
-                  <div id="search-container" class="">
-                        <div class="row">
-                          
-                              <div class="col-md-8 my-1">
-                                  <input
-                                    type="search"
-                                    id="search-input"
-                                    placeholder="Search book name here.."
-                                  />
-                              </div>
+																<div class="container-fluid row mt-3 py-1">
 
-                              <div class="col-md-4 col-ms-6">
-                                <button id="search">Search</button>
-                              </div>
-                          
-                        </div>
-                  </div>
-                </div>  
-                  
-              </div>
+																				<div class="col-md-7">
 
-            <!--div id="products" class="my-4"></div-->
-            
-          </div>
+																								<div id="buttons" class="my-4">
+																												<button class="button-value" onclick="filterProduct('all')">All</button>
+																												<button class="button-value" onclick="filterProduct('Topwear')">
+																																Science
+																												</button>
+																												<button class="button-value" onclick="filterProduct('Bottomwear')">
+																																Romance
+																												</button>
+																												<button class="button-value" onclick="filterProduct('Jacket')">
+																																Advanture
+																												</button>
+																												<button class="button-value" onclick="filterProduct('Watch')">
+																																Horror
+																												</button>
+																								</div>
 
-        </section>
-        <!-- first section end -->
-        <!-- --dev_phyoewai end-- -->
+																				</div>
 
-      <!-- second section start -->
-      <section class="section-data pb-1">
-          <div class="container container-fluid py-1 pb-1">
-              
-              <div class="row pb-1">
+																				<div class="col-md-5">
+																								<div id="search-container" class="">
+																												<div class="row">
 
-                  <div class="col-md-3 dev-left">
+																																<div class="col-md-8 my-1">
+																																				<input type="search" id="search-input" placeholder="Search book name here.." />
+																																</div>
 
-                      <div class="card" style="background: #eff2f6">
-                          <div class="card-header text-center" style="background: 
+																																<div class="col-md-4 col-ms-6">
+																																				<button id="search">Search</button>
+																																</div>
+
+																												</div>
+																								</div>
+																				</div>
+
+																</div>
+
+																<!--div id="products" class="my-4"></div-->
+
+												</div>
+
+								</section>
+								<!-- first section end -->
+								<!-- --dev_phyoewai end-- -->
+
+								<!-- second section start -->
+								<section class="section-data pb-1">
+												<div class="container-fluid container py-1 pb-1">
+
+																<div class="row pb-1">
+
+																				<div class="col-md-3 dev-left">
+
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background:
                           rgb(49, 65, 70); border-radius: 5px">
-                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                          </div>
-                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand" style="animation-delay: 0ms">Book Name <hr class="col-md-8 offset-2"></h3>
-                              <p class="text-center text-warning">
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star-half-stroke"></span>
-                              </p>
-                              <p class="text-black text-center bigtitle" style="font-size: larger;">
-                                 <!--     not work      -->
-                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                              </p>
-                              <!-- Button -->
-                             <div class="col-md-6 offset-md-4">
-                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                             </div>            
-                          </div>
-                      </div>
-                  </div>
-  
-                  <div class="col-md-3 dev-center">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black"
+																																				style="animation-delay: 0ms">Book Name
+																																				<hr class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-                    <div class="card" style="background: #eff2f6">
-                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                            <p class="text-center text-warning">
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star-half-stroke"></span>
-                            </p>
-                            <p class="text-black text-center bigtitle" style="font-size: larger;">
-                               <!--     not work      -->
-                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                            </p>
-                            <!-- Button -->
-                           <div class="col-md-6 offset-md-4">
-                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i></button>
-                           </div>            
-                        </div>
-                    </div>
-                </div>
-  
-                <div class="col-md-3 dev-center">
+																				<div class="col-md-3 dev-center">
 
-                    <div class="card" style="background: #eff2f6">
-                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                            <p class="text-center text-warning">
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star-half-stroke"></span>
-                            </p>
-                            <p class="text-black text-center bigtitle" style="font-size: larger;">
-                               <!--     not work      -->
-                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                            </p>
-                            <!-- Button -->
-                           <div class="col-md-6 offset-md-4">
-                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                           </div>            
-                        </div>
-                    </div>
-                </div>
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color:rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-                  <div class="col-md-3 dev-right">
+																				<div class="col-md-3 dev-center">
 
-                      <div class="card" style="background: #eff2f6">
-                          <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                          </div>
-                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                              <p class="text-center text-warning">
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star-half-stroke"></span>
-                              </p>
-                              <p class="text-black text-center bigtitle" style="font-size: larger;">
-                                 <!--     not work      -->
-                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                              </p>
-                              <!-- Button -->
-                             <div class="col-md-6 offset-md-4">
-                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                             </div>            
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <!-- second section end -->
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-      <!-- third section start -->
-      <section class="section-data pb-2">
-        <div class="container container-fluid py-1 pb-1  pt-1">
-            
-            <div class="row">
+																				<div class="col-md-3 dev-right">
 
-                <div class="col-md-3 dev-left">
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
+																</div>
+												</div>
+								</section>
+								<!-- second section end -->
 
-                    <div class="card" style="background: #eff2f6">
-                        <div class="card-header text-center" style="background: 
+								<!-- third section start -->
+								<section class="section-data pb-2">
+												<div class="container-fluid container py-1 pb-1 pt-1">
+
+																<div class="row">
+
+																				<div class="col-md-3 dev-left">
+
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background:
                         rgb(49, 65, 70); border-radius: 5px">
-                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand" style="animation-delay: 0ms">Book Name <hr class="col-md-8 offset-2"></h3>
-                            <p class="text-center text-warning">
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star-half-stroke"></span>
-                            </p>
-                            <p class="text-black text-center bigtitle" style="font-size: larger;">
-                               <!--     not work      -->
-                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                            </p>
-                            <!-- Button -->
-                           <div class="col-md-6 offset-md-4">
-                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                           </div>            
-                        </div>
-                    </div>
-                </div>
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black"
+																																				style="animation-delay: 0ms">Book Name
+																																				<hr class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-                <div class="col-md-3 dev-center">
+																				<div class="col-md-3 dev-center">
 
-                  <div class="card" style="background: #eff2f6">
-                      <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                          <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                      </div>
-                      <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                          <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                          <p class="text-center text-warning">
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star-half-stroke"></span>
-                          </p>
-                          <p class="text-black text-center bigtitle" style="font-size: larger;">
-                             <!--     not work      -->
-                             <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                          </p>
-                          <!-- Button -->
-                         <div class="col-md-6 offset-md-4">
-                            <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i></button>
-                         </div>            
-                      </div>
-                  </div>
-              </div>
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color:rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-              <div class="col-md-3 dev-center">
+																				<div class="col-md-3 dev-center">
 
-                  <div class="card" style="background: #eff2f6">
-                      <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                          <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                      </div>
-                      <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                          <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                          <p class="text-center text-warning">
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star"></span>
-                              <span class="fa-solid fa-star-half-stroke"></span>
-                          </p>
-                          <p class="text-black text-center bigtitle" style="font-size: larger;">
-                             <!--     not work      -->
-                             <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                          </p>
-                          <!-- Button -->
-                         <div class="col-md-6 offset-md-4">
-                            <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                         </div>            
-                      </div>
-                  </div>
-              </div>
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-                <div class="col-md-3 dev-right">
+																				<div class="col-md-3 dev-right">
 
-                    <div class="card" style="background: #eff2f6">
-                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                            <p class="text-center text-warning">
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star-half-stroke"></span>
-                            </p>
-                            <p class="text-black text-center bigtitle" style="font-size: larger;">
-                               <!--     not work      -->
-                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                            </p>
-                            <!-- Button -->
-                           <div class="col-md-6 offset-md-4">
-                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                           </div>            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-      <!-- third section end -->
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
+																</div>
+												</div>
+								</section>
+								<!-- third section end -->
 
-      <!-- fourth section start -->
-     <section class="section-data pb-2">
-          <div class="container container-fluid py-1 pb-1  pt-1">
-              
-              <div class="row">
+								<!-- fourth section start -->
+								<section class="section-data pb-2">
+												<div class="container-fluid container py-1 pb-1 pt-1">
 
-                  <div class="col-md-3 dev-left">
+																<div class="row">
 
-                      <div class="card" style="background: #eff2f6">
-                          <div class="card-header text-center" style="background: 
+																				<div class="col-md-3 dev-left">
+
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background:
                           rgb(49, 65, 70); border-radius: 5px">
-                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                          </div>
-                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand" style="animation-delay: 0ms">Book Name <hr class="col-md-8 offset-2"></h3>
-                              <p class="text-center text-warning">
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star-half-stroke"></span>
-                              </p>
-                              <p class="text-black text-center bigtitle" style="font-size: larger;">
-                                 <!--     not work      -->
-                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                              </p>
-                              <!-- Button -->
-                             <div class="col-md-6 offset-md-4">
-                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                             </div>            
-                          </div>
-                      </div>
-                  </div>
-  
-                  <div class="col-md-3 dev-center">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black"
+																																				style="animation-delay: 0ms">Book Name
+																																				<hr class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-                    <div class="card" style="background: #eff2f6">
-                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                            <p class="text-center text-warning">
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star-half-stroke"></span>
-                            </p>
-                            <p class="text-black text-center bigtitle" style="font-size: larger;">
-                               <!--     not work      -->
-                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                            </p>
-                            <!-- Button -->
-                           <div class="col-md-6 offset-md-4">
-                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i></button>
-                           </div>            
-                        </div>
-                    </div>
-                </div>
-  
-                <div class="col-md-3 dev-center">
+																				<div class="col-md-3 dev-center">
 
-                    <div class="card" style="background: #eff2f6">
-                        <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                            <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                        </div>
-                        <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                            <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                            <p class="text-center text-warning">
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star"></span>
-                                <span class="fa-solid fa-star-half-stroke"></span>
-                            </p>
-                            <p class="text-black text-center bigtitle" style="font-size: larger;">
-                               <!--     not work      -->
-                               <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                            </p>
-                            <!-- Button -->
-                           <div class="col-md-6 offset-md-4">
-                              <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                           </div>            
-                        </div>
-                    </div>
-                </div>
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color:rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-                  <div class="col-md-3 dev-right">
+																				<div class="col-md-3 dev-center">
 
-                      <div class="card" style="background: #eff2f6">
-                          <div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-                              <img src="{{asset('assets/view/image/vap-r.png')}}" alt="" class="img-fluid">
-                          </div>
-                          <div class="card-block pb-2 py-3" style="background: #eff2f6">
-                              <h3 class="text-black text-center bigtitle animate__animated animate__rubberBand">Book Name <hr style="background: blue"  class="col-md-8 offset-2"></h3>
-                              <p class="text-center text-warning">
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star"></span>
-                                  <span class="fa-solid fa-star-half-stroke"></span>
-                              </p>
-                              <p class="text-black text-center bigtitle" style="font-size: larger;">
-                                 <!--     not work      -->
-                                 <i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>  2500ks <span style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-                              </p>
-                              <!-- Button -->
-                             <div class="col-md-6 offset-md-4">
-                                <button type="button" class="btn btn-warning ms- animate__animated animate__tada" style="font-family:Harrington; animation-delay: 1000ms;">Buy <i class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i></button>
-                             </div>            
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <!-- fourth section end -->
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
 
-      <!-- pagination section start -->
-    <section class="container mt-4">
-      <div class="pagination col-md-4 offset-md-5">
-        <ul id="paginationList">
-          <!-- Pagination links will be dynamically added here -->
-        </ul>
-      </div>
-    </section>  
-      <!-- pagination section end -->
+																				<div class="col-md-3 dev-right">
 
-      <div class="container col-md-2 mt-4 py-4" style="color: rgb(151, 163, 172);font-style: italic;"><h6>dev_phyoewai &copy;</h6></div>
-       
-    <footer class="footer bg-info-subtle mt-auto">
-      <div class="container text-center">
-          <span class="text-muted">&copy; 2023 Bookshop.com. All Rights Reserved.</span>
-      </div>
-    </footer>
+																								<div class="card" style="background: #eff2f6">
+																												<div class="card-header text-center"
+																																style="background: rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																				class="img-fluid">
+																												</div>
+																												<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																				Name
+																																				<hr style="background: blue" class="col-md-8 offset-2">
+																																</h3>
+																																<p class="text-warning text-center">
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star"></span>
+																																				<span class="fa-solid fa-star-half-stroke"></span>
+																																</p>
+																																<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																				<!--     not work      -->
+																																				<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																				2500ks <span
+																																								style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																</p>
+																																<!-- Button -->
+																																<div class="col-md-6 offset-md-4">
+																																				<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart <i
+																																												class="fa-solid fa-bag-shopping"
+																																												style="color: rgb(39, 59, 61);"></i></button>
+																																</div>
+																												</div>
+																								</div>
+																				</div>
+																</div>
+												</div>
+								</section>
+								<!-- fourth section end -->
 
+								<!-- pagination section start -->
+								<section class="container mt-4">
+												<div class="pagination col-md-4 offset-md-5">
+																<ul id="paginationList">
+																				<!-- Pagination links will be dynamically added here -->
+																</ul>
+												</div>
+								</section>
+								<!-- pagination section end -->
 
-  <!--
-    @yield('header_footer')
-  -->
+								<div class="col-md-2 container mt-4 py-4" style="color: rgb(151, 163, 172);font-style: italic;">
+												<h6>dev_phyoewai &copy;</h6>
+								</div>
 
-     <script>
-        const card = document.querySelector('.card');
-    
-        card.addEventListener('mouseover', function() {
-          this.style.transform = 'scale(1.05)'; // Enlarge the card
-          this.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)'; // Add shadow
-          // Add any other style changes you want on hover
-        });
-    
-        card.addEventListener('mouseout', function() {
-          this.style.transform = 'scale(1)'; // Restore original size
-          this.style.boxShadow = 'none'; // Remove shadow
-          // Restore any other original styles
-        });
-      </script>
+								<footer class="footer bg-info-subtle mt-auto">
+												<div class="container text-center">
+																<span class="text-muted">&copy; 2023 Bookshop.com. All Rights Reserved.</span>
+												</div>
+								</footer>
 
-      <!-- pagination s -->
-      <script>
-                // const itemsPerPage = 10; // Items per page
-                // const totalItems = 40; // Total items in your list
-                // const totalPages = Math.ceil(totalItems / itemsPerPage);
+								<!--
+				@yield('header_footer')
+		-->
 
-                // const paginationList = document.getElementById("paginationList");
+								<script>
+												const card = document.querySelector('.card');
 
-                function createPagination() {
-                for (let i = 1; i <= totalPages; i++) {
-                    const li = document.createElement("li");
-                    const link = document.createElement("a");
-                    link.href = "#";
-                    link.textContent = i;
-                    li.appendChild(link);
-                    paginationList.appendChild(li);
+												card.addEventListener('mouseover', function() {
+																this.style.transform = 'scale(1.05)'; // Enlarge the card
+																this.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)'; // Add shadow
+																// Add any other style changes you want on hover
+												});
 
-                    link.addEventListener("click", function (event) {
-                    event.preventDefault();
-                    setActivePage(i);
-                    displayItems(i);
-                    });
-                }
-                }
+												card.addEventListener('mouseout', function() {
+																this.style.transform = 'scale(1)'; // Restore original size
+																this.style.boxShadow = 'none'; // Remove shadow
+																// Restore any other original styles
+												});
+								</script>
 
-                function setActivePage(pageNumber) {
-                const paginationLinks = document.querySelectorAll(".pagination a");
-                paginationLinks.forEach((link, index) => {
-                    if (index + 1 === pageNumber) {
-                    link.parentElement.classList.add("active");
-                    } else {
-                    link.parentElement.classList.remove("active");
-                    }
-                });
-                }
+								<!-- pagination s -->
+								<script>
+												// const itemsPerPage = 10; // Items per page
+												// const totalItems = 40; // Total items in your list
+												// const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-                function displayItems(pageNumber) {
-                // Logic to display items for the selected page
-                // Replace this with your own logic to show items
-                console.log(`Displaying items for page ${pageNumber}`);
-                }
+												// const paginationList = document.getElementById("paginationList");
 
-                // Initialize pagination
-                createPagination();
-                setActivePage(1); // Set first page as active by default
-                displayItems(1); // Display items for the first page by default
-</script>
-      <!-- pagination e -->
+												function createPagination() {
+																for (let i = 1; i <= totalPages; i++) {
+																				const li = document.createElement("li");
+																				const link = document.createElement("a");
+																				link.href = "#";
+																				link.textContent = i;
+																				li.appendChild(link);
+																				paginationList.appendChild(li);
 
-      <script>
-const itemsPerPage = 10; // Items per page
-const totalItems = 40; // Total items in your list
-const totalPages = Math.ceil(totalItems / itemsPerPage);
+																				link.addEventListener("click", function(event) {
+																								event.preventDefault();
+																								setActivePage(i);
+																								displayItems(i);
+																				});
+																}
+												}
 
-const paginationList = document.getElementById("paginationList");
+												function setActivePage(pageNumber) {
+																const paginationLinks = document.querySelectorAll(".pagination a");
+																paginationLinks.forEach((link, index) => {
+																				if (index + 1 === pageNumber) {
+																								link.parentElement.classList.add("active");
+																				} else {
+																								link.parentElement.classList.remove("active");
+																				}
+																});
+												}
 
-function createPagination() {
-  for (let i = 1; i <= totalPages; i++) {
-    const li = document.createElement("li");
-    const link = document.createElement("a");
-    link.href = "#";
-    link.textContent = i;
-    li.appendChild(link);
-    paginationList.appendChild(li);
+												function displayItems(pageNumber) {
+																// Logic to display items for the selected page
+																// Replace this with your own logic to show items
+																console.log(`Displaying items for page ${pageNumber}`);
+												}
 
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      setActivePage(i);
-      displayItems(i);
-    });
+												// Initialize pagination
+												createPagination();
+												setActivePage(1); // Set first page as active by default
+												displayItems(1); // Display items for the first page by default
+								</script>
+								<!-- pagination e -->
 
-    link.addEventListener("mouseover", function () {
-      link.style.backgroundColor = "#f5f5f5";
-      link.style.borderColor = "#aaa";
-      link.style.color = "#000";
-    });
+								<script>
+												const itemsPerPage = 10; // Items per page
+												const totalItems = 40; // Total items in your list
+												const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-    link.addEventListener("mouseout", function () {
-      if (!link.parentElement.classList.contains("active")) {
-        link.style.backgroundColor = "";
-        link.style.borderColor = "#ddd";
-        link.style.color = "#333";
-      }
-    });
-  }
-}
+												const paginationList = document.getElementById("paginationList");
 
-function setActivePage(pageNumber) {
-  const paginationLinks = document.querySelectorAll(".pagination a");
-  paginationLinks.forEach((link, index) => {
-    if (index + 1 === pageNumber) {
-      link.parentElement.classList.add("active");
-      link.style.backgroundColor = "#007bff";
-      link.style.borderColor = "#007bff";
-      link.style.color = "#fff";
-    } else {
-      link.parentElement.classList.remove("active");
-      link.style.backgroundColor = "";
-      link.style.borderColor = "#ddd";
-      link.style.color = "#333";
-    }
-  });
-}
+												function createPagination() {
+																for (let i = 1; i <= totalPages; i++) {
+																				const li = document.createElement("li");
+																				const link = document.createElement("a");
+																				link.href = "#";
+																				link.textContent = i;
+																				li.appendChild(link);
+																				paginationList.appendChild(li);
 
-function displayItems(pageNumber) {
-  // Logic to display items for the selected page
-  // Replace this with your own logic to show items
-  console.log(`Displaying items for page ${pageNumber}`);
-}
+																				link.addEventListener("click", function(event) {
+																								event.preventDefault();
+																								setActivePage(i);
+																								displayItems(i);
+																				});
 
-// Initialize pagination
-createPagination();
-setActivePage(1); // Set first page as active by default
-displayItems(1); // Display items for the first page by default
+																				link.addEventListener("mouseover", function() {
+																								link.style.backgroundColor = "#f5f5f5";
+																								link.style.borderColor = "#aaa";
+																								link.style.color = "#000";
+																				});
 
-</script>
+																				link.addEventListener("mouseout", function() {
+																								if (!link.parentElement.classList.contains("active")) {
+																												link.style.backgroundColor = "";
+																												link.style.borderColor = "#ddd";
+																												link.style.color = "#333";
+																								}
+																				});
+																}
+												}
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+												function setActivePage(pageNumber) {
+																const paginationLinks = document.querySelectorAll(".pagination a");
+																paginationLinks.forEach((link, index) => {
+																				if (index + 1 === pageNumber) {
+																								link.parentElement.classList.add("active");
+																								link.style.backgroundColor = "#007bff";
+																								link.style.borderColor = "#007bff";
+																								link.style.color = "#fff";
+																				} else {
+																								link.parentElement.classList.remove("active");
+																								link.style.backgroundColor = "";
+																								link.style.borderColor = "#ddd";
+																								link.style.color = "#333";
+																				}
+																});
+												}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-    </script>
+												function displayItems(pageNumber) {
+																// Logic to display items for the selected page
+																// Replace this with your own logic to show items
+																console.log(`Displaying items for page ${pageNumber}`);
+												}
 
-</body>
+												// Initialize pagination
+												createPagination();
+												setActivePage(1); // Set first page as active by default
+												displayItems(1); // Display items for the first page by default
+								</script>
 
-<!-- @yield('script') -->
+								<script src="https://unpkg.com/scrollreveal"></script>
+								<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+								<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+				</body>
+
+				<!-- @yield('script') -->
 
 </html>
 
 <!--div>
-    When there is no desire, all things are at peace. - Laozi 
+				When there is no desire, all things are at peace. - Laozi
 </div-->
