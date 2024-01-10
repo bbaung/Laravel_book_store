@@ -11,15 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
+        Schema::create('create_username_temporary_table', function (Blueprint $table) {
+            $table->integer('userid');
             $table->string('username');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->integer('phone_number');
             $table->string('password');
             $table->string('address');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->timestamps();
+            $table->integer('book_id');
+            $table->string('book_name');
+            $table->string('author');
+            $table->string('categories');
+            $table->date('released_date');
+            $table->integer('price');
+            $table->integer('quantity');
         });
     }
 
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('create_username_temporary_table');
     }
 };
