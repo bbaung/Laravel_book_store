@@ -22,9 +22,12 @@ return new class extends Migration
             $table->string('book_name');
             $table->string('author');
             $table->string('categories');
-            $table->date('released_date');
-            $table->integer('price');
             $table->integer('quantity');
+            $table->integer('book_price');
+            $table->integer('total_price');
+            $table->date('released_date');
+
+
         });
     }
 
