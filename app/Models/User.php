@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Database\Eloquent\Model;
+//use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -47,13 +47,13 @@ class User extends Authenticatable
     ];
 
 
-    protected static function boot()
+    /*protected static function boot()
     {
         parent::boot();
 
         // Creating event listener
         static::creating(function ($user) {
-            $login = new UserLogin([
+            $login = new User_login([
                 'username' => $user->username,
                 'email' => $user->email,
                 'password' =>  $user->password,
@@ -86,5 +86,5 @@ class User extends Authenticatable
     public function login()
     {
         return $this->hasOne(User_login::class);
-    }
+    }*/
 }

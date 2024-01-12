@@ -153,7 +153,7 @@
 
 												.main {
 																background-color: skyblue;
-																padding: 1%;
+																/* padding: 0.5%; */
 												}
 
 												.sub-main {
@@ -173,8 +173,8 @@
 
 				<body>
 								<div class="wrapper d-flex flex-column">
-												<div class="w-100 fixed-top mb-5" style="z-index: 1;">
-																<nav class="navbar navbar-expand-lg bg-body-tertiary pt-3">
+												<div class="w-100 fixed-top main" style="z-index: 1;">
+																<nav class="navbar navbar-expand-lg bg-body-tertiary main pt-3">
 																				<div class="container-fluid main">
 
 																								<div class="nav-item mx-5 me-5">

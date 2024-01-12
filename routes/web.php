@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,7 @@ Route::get('/Login', [PostController::class,'Login_in'] )->name("Login");
 Route::post('/Login', [PostController::class,'store'] );
 
 Route::get('/sign_up', [PostController::class,'sign_up'] )->name('sign_up');
+Route::post('/sign_up', [UserController::class,'store'] );
 
 Route::get('/after_login_home_page', [PostController::class,'after_login_home_page'])->name('after_login_home_page');
 

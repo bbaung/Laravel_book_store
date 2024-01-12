@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('username', 50)->unique();
             $table->string('email',100)->unique();
             $table->string('phone_number');
-            $table->string('password',50);
+            $table->string('password');
             $table->string('address',100);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
 
-            
+
         });
     }
 
