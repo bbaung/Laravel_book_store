@@ -153,17 +153,14 @@
 
 												.main {
 																background-color: skyblue;
-																/* padding: 0.5%; */
 												}
 
 												.sub-main {
-																background-color: thistle;
+																width: 100%;
+																height: 60px;
 												}
 
 												/* pagination custom e */
-								</style>
-								<style>
-
 								</style>
 
 								@yield('style')
@@ -172,10 +169,10 @@
 				</head>
 
 				<body>
-								<div class="wrapper d-flex flex-column">
+								<div class="wrapper d-flex flex-column main">
 												<div class="w-100 fixed-top main" style="z-index: 1;">
-																<nav class="navbar navbar-expand-lg bg-body-tertiary main pt-3">
-																				<div class="container-fluid main">
+																<nav class="navbar navbar-expand-lg bg-body-tertiary pb-0 pt-3">
+																				<div class="container-fluid main sub-main">
 
 																								<div class="nav-item mx-5 me-5">
 																												<a href="{{ route('cart') }}"><button type="button" class="btn btn-outline-secondary">
@@ -215,7 +212,7 @@
 																</div> --}}
 
 																{{-- Additon by Amm --}}
-																<div class="container-fluid row sub-main mt-1 py-1">
+																<div class="container-fluid row mt-1 py-1">
 
 																				<div class="col-md-7">
 
@@ -261,7 +258,8 @@
 
 								@yield('header_footer')
 
-								<footer class="footer bg-info-subtle mt-auto">
+								{{-- <footer class="footer bg-info-subtle mt-auto"> --}}
+								<footer class="bg-primary fixed-bottom text-center text-white">
 												<div class="container text-center">
 																<span class="text-muted">&copy; 2023 Bookshop.com. All Rights Reserved.</span>
 												</div>
