@@ -19,7 +19,7 @@
 																</div>
 												</div>
 												<div class="col-9">
-																<div class="card w-100 h-100">
+																{{-- <div class="card h-100 w-150">
 																				<div class="card-body">
 																								<h4 class="card-title">Card title</h4>
 																								<p class="card-text">In YOU CAN, YOU WILL, Joel Osteen shares eight undeniable qualities
@@ -37,6 +37,31 @@
 																												<button type="button" class="btn btn-sm btn-outline-success mx-2 my-3">Add to
 																																cart</button>
 
+																								</div>
+																				</div>
+																</div> --}}
+
+																<div class="card card-text mb-3" style="max-width: 540px;">
+																				<div class="row g-0">
+																								{{-- <div class="col-md-4">
+																												<img src="..." class="img-fluid rounded-start" alt="...">
+																								</div> --}}
+																								<div class="col-md-12">
+																												<div class="card-body">
+																																<h5 class="card-title">Card title</h5>
+																																<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+																																				additional content. This content is a little bit longer.</p>
+																																<p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+																																<div class="position-absolute d-flex bottom-0">
+																																				<button type="button" class="btn btn-sm btn-secondary mx-2 my-3" disabled>2000
+																																								mmk</button>
+																																				<button type="button" class="btn btn-sm btn-secondary mx-2 my-3" disabled>100
+																																								stock</button>
+																																				<button type="button" class="btn btn-sm btn-outline-success mx-2 my-3">Add to
+																																								cart</button>
+
+																																</div>
+																												</div>
 																								</div>
 																				</div>
 																</div>

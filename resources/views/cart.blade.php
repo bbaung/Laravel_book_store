@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 				<head>
@@ -44,102 +44,115 @@
 																								<a class="navbar-brand" href="#">Romance</a>
 																				</div>
 																</div>
-												</div>
-												<div class="align-self-center w-75 main-body">
-																<h3 class="text-decoration-underline pb-3 text-center">Cart List</h3>
+												</div> --}}
+@extends('header')
+@section('style')
+				<link rel="stylesheet" href="{{ asset('assets/css/cart.css') }}">
+@endsection
 
-																<table class="cart-list table-light m-3 table text-center">
-																				<thead>
-																								<tr>
-																												<th scope="col">Item</th>
-																												<th scope="col">Price</th>
-																												<th scope="col">Quantity</th>
-																												<th scope="col">Total</th>
-																												<th scope="col"></th>
-																								</tr>
-																				</thead>
-																				<tbody>
-																								<tr>
-																												<th scope="row">You Can You Will 1<br> Joel Osten</th>
-																												<td class="price">2000</td>
-																												<td class="text-center">
-																																<div class="input-group d-inline-flex">
-																																				<div class="input-group-prepend">
-																																								<button class="btn btn-outline-secondary minusBtn" type="button"
-																																												id="">-</button>
-																																				</div>
-																																				<input type="text" class="form-control quantityInput text-center" value="1"
-																																								id="">
-																																				<div class="input-group-append">
-																																								<button class="btn btn-outline-secondary plusBtn" type="button"
-																																												id="">+</button>
-																																				</div>
+@section('header_footer')
+				<section class="container-fluid container-custom">
+								{{-- <div class="align-self-center w-75 main-body"> --}}
+								<div class="container">
+												<h3 class="text-decoration-underline pb-3 text-center">Cart List</h3>
+
+												<table class="cart-list table-light m-3 table text-center">
+																<thead>
+																				<tr>
+																								<th scope="col">Item</th>
+																								<th scope="col">Price</th>
+																								<th scope="col">Quantity</th>
+																								<th scope="col">Total</th>
+																								<th scope="col"></th>
+																				</tr>
+																</thead>
+																<tbody>
+																				<tr>
+																								<th scope="row">You Can You Will 1<br> Joel Osten</th>
+																								<td class="price">2000</td>
+																								<td class="text-center">
+																												<div class="input-group d-inline-flex">
+																																<div class="input-group-prepend">
+																																				<button class="btn btn-outline-secondary minusBtn" type="button"
+																																								id="">-</button>
 																																</div>
-																												</td>
-																												<td class="totalPrice">2000</td>
-																												<td><button type="button" class="btn btn-danger deleteBtn"><i
-																																								class="fas fa-times"></i></button></td>
-																								</tr>
-																								<tr>
-																												<th scope="row">You Can You Will 2<br> Joel Osten</th>
-																												<td class="price">2000</td>
-																												<td class="text-center">
-																																<div class="input-group d-inline-flex">
-																																				<div class="input-group-prepend">
-																																								<button class="btn btn-outline-secondary minusBtn" type="button"
-																																												id="">-</button>
-																																				</div>
-																																				<input type="text" class="form-control quantityInput text-center" value="1"
-																																								id="">
-																																				<div class="input-group-append">
-																																								<button class="btn btn-outline-secondary plusBtn" type="button"
-																																												id="">+</button>
-																																				</div>
+																																<input type="text" class="form-control quantityInput text-center" value="1"
+																																				id="">
+																																<div class="input-group-append">
+																																				<button class="btn btn-outline-secondary plusBtn" type="button"
+																																								id="">+</button>
 																																</div>
-																												</td>
-																												<td class="totalPrice">2000</td>
-																												<td><button type="button" class="btn btn-danger deleteBtn"><i
-																																								class="fas fa-times"></i></button></td>
-																								</tr>
-																								<tr>
-																												<th scope="row">You Can You Will 3<br> Joel Osten</th>
-																												<td class="price">2000</td>
-																												<td class="text-center">
-																																<div class="input-group d-inline-flex">
-																																				<div class="input-group-prepend">
-																																								<button class="btn btn-outline-secondary minusBtn" type="button"
-																																												id="">-</button>
-																																				</div>
-																																				<input type="text" class="form-control quantityInput text-center"
-																																								value="1" id="">
-																																				<div class="input-group-append">
-																																								<button class="btn btn-outline-secondary plusBtn" type="button"
-																																												id="">+</button>
-																																				</div>
+																												</div>
+																								</td>
+																								<td class="totalPrice">2000</td>
+																								<td><button type="button" class="btn btn-danger deleteBtn"><i class="fas fa-times"></i></button>
+																								</td>
+																				</tr>
+																				<tr>
+																								<th scope="row">You Can You Will 2<br> Joel Osten</th>
+																								<td class="price">2000</td>
+																								<td class="text-center">
+																												<div class="input-group d-inline-flex">
+																																<div class="input-group-prepend">
+																																				<button class="btn btn-outline-secondary minusBtn" type="button"
+																																								id="">-</button>
 																																</div>
-																												</td>
-																												<td class="totalPrice">2000</td>
-																												<td><button type="button" class="btn btn-danger deleteBtn"><i
-																																								class="fas fa-times"></i></button></td>
-																								</tr>
-																				</tbody>
-																</table>
-												</div>
+																																<input type="text" class="form-control quantityInput text-center" value="1"
+																																				id="">
+																																<div class="input-group-append">
+																																				<button class="btn btn-outline-secondary plusBtn" type="button"
+																																								id="">+</button>
+																																</div>
+																												</div>
+																								</td>
+																								<td class="totalPrice">2000</td>
+																								<td><button type="button" class="btn btn-danger deleteBtn"><i class="fas fa-times"></i></button>
+																								</td>
+																				</tr>
+																				<tr>
+																								<th scope="row">You Can You Will 3<br> Joel Osten</th>
+																								<td class="price">2000</td>
+																								<td class="text-center">
+																												<div class="input-group d-inline-flex">
+																																<div class="input-group-prepend">
+																																				<button class="btn btn-outline-secondary minusBtn" type="button"
+																																								id="">-</button>
+																																</div>
+																																<input type="text" class="form-control quantityInput text-center" value="1"
+																																				id="">
+																																<div class="input-group-append">
+																																				<button class="btn btn-outline-secondary plusBtn" type="button"
+																																								id="">+</button>
+																																</div>
+																												</div>
+																								</td>
+																								<td class="totalPrice">2000</td>
+																								<td><button type="button" class="btn btn-danger deleteBtn"><i class="fas fa-times"></i></button>
+																								</td>
+																				</tr>
+																</tbody>
+												</table>
 								</div>
-								<footer class="footer bg-info-subtle mt-auto">
+				</section>
+@endsection
+{{-- </div>
+								 <footer class="footer bg-info-subtle mt-auto">
 												<div class="container text-center">
 																<span class="text-muted">&copy; 2023 Bookshop.com. All Rights Reserved.</span>
 												</div>
 								</footer>
-				</body>
+				</body> --}}
+
+@section('script')
 				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 								integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
 				</script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 				<script src="{{ asset('assets/js/cart.js') }}"></script>
+@endsection
 
-</html>
+{{-- </html>
 <div>
 				<!-- The whole future lies in uncertainty: live immediately. - Seneca -->
-</div>
+</div> --}}
