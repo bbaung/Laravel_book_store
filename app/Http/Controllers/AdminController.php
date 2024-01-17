@@ -36,7 +36,8 @@ class AdminController extends Controller
     }
 
     public function inventory(){
-        return view('admin.admin_inventory_status');
+        $books = Book::get();
+        return view('admin.admin_inventory_status',compact('books'));
     }
 
 
