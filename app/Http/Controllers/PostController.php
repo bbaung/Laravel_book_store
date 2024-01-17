@@ -64,7 +64,7 @@ class PostController extends Controller
         }
         else
         $user = User::where('email',$request->email)->first();
-        return view("after_login_view_all",compact('user'));
+        return view(('after_login_home_page'),compact('user'));
         // header("Location: /after_login_view_all");
         exit();
     }

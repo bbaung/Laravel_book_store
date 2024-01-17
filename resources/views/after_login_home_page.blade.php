@@ -2,7 +2,7 @@
 				Home page
 </h1>
 
-@extends('header')
+@extends('after_login_header')
 
 @section('style')
 				<link rel="stylesheet"
