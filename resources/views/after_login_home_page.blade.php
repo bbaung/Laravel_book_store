@@ -171,7 +171,7 @@
 								<div class="container-fluid container py-1 pb-1">
 												<div class="row mt-5">
 																<h3 class="d-inline col-6">Best Selling Books in 2023</h3>
-																<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
+																<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('after_login_view_all') }}">View All</a>
 												</div>
 
 												<div class="row pb-1">
@@ -179,7 +179,7 @@
 																<div class="col-md-3 dev-left">
 
 																				<div class="card" style="background: #eff2f6">
-																								<a href="{{ route('book_review') }}">
+																								<a href="{{ route('after_login_book_review') }}">
 																												<div class="card-header text-center"
 																																style="background:
                           rgb(49, 65, 70); border-radius: 5px">
@@ -253,7 +253,7 @@
 								<div class="container-fluid container py-1 pb-1 pt-1">
 												<div class="row mt-5">
 																<h3 class="d-inline col-6">Best Reviewed Books </h3>
-																<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
+																<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('after_login_view_all') }}">View All</a>
 												</div>
 												<div class="row">
 
