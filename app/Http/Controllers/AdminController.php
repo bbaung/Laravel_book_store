@@ -20,6 +20,7 @@ class AdminController extends Controller
     }
 
     public function add_book(){
+        
         return view('admin.admin_add_book');
     }
 

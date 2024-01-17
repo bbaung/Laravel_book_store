@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -22,11 +23,11 @@ class PostController extends Controller
     }
 
     public function Login_in (){
-        
-        return view("Login_in");    
+
+        return view("Login_in");
     }
 
-   
+
     public function sign_up (){
         return view("sign_up");
     }
@@ -57,13 +58,15 @@ class PostController extends Controller
         ], [
             'email.regex' => 'The email must be in a valid format with @ and end with .com',
         ]);
-        
+
         if($validate->fails()){
             return redirect('Login')-> withErrors($validate);
         }
-        else   
-        header("Location: /after_login_home_page");
+        else
+        $user = User::where('email',$request->email)->first();
+        return view("after_login_view_all",compact('user'));
+        // header("Location: /after_login_view_all");
         exit();
     }
-    
+
 }

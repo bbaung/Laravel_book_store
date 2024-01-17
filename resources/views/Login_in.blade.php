@@ -6,7 +6,7 @@
 								<meta name="viewport" content="width=device-width, initial-scale=1.0">
 								<title>Login | ATS Book Store</title>
 
-								
+
 
 								<style>
 												@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
@@ -22,7 +22,7 @@
 											echo $err;
 										}
 									}
-									 
+
 									?>
 									<form method='post' action="{{url('Login')}}">
 												<input type="hidden" name="_token" value="{{csrf_token() }}">
@@ -48,11 +48,11 @@
 																<button class="submit-btn" id="submit"></button>
 																				<label for="submit">Login
 																				</label>
-																				
+
 												</div>
 												<div class="sign-up-link">
 																<p>Don't have account? <a href="/sign_up">Sign Up</a></p>
 												</div>
-												</form>	
+												</form>
 								</div>
 				</body>
