@@ -14,8 +14,9 @@
 								<div class="row pt-3">
 												<div class="col-3">
 																<div class="card" style="width: 17rem;">
-																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																								class="card-img-top" alt="...">
+																				{{-- <img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="..."> --}}
+																				<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
 																</div>
 												</div>
 												<div class="col-9">
@@ -57,8 +58,9 @@
 																																								mmk</button>
 																																				<button type="button" class="btn btn-sm btn-secondary mx-2 my-3" disabled>100
 																																								stock</button>
-																																				<button type="button" class="btn btn-sm btn-outline-success mx-2 my-3">Add to
-																																								cart</button>
+																																				<a href="{{ route('Login') }}"><button type="button"
+																																												class="btn btn-sm btn-outline-success mx-2 my-3">Add to
+																																												cart</button></a>
 
 																																</div>
 																												</div>

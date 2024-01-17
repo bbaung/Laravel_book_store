@@ -173,16 +173,19 @@
 																<h3 class="d-inline col-6">Best Selling Books in 2023</h3>
 																<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
 												</div>
+
 												<div class="row pb-1">
 
 																<div class="col-md-3 dev-left">
 
 																				<div class="card" style="background: #eff2f6">
-																								<div class="card-header text-center"
-																												style="background:
+																								<a href="{{ route('book_review') }}">
+																												<div class="card-header text-center"
+																																style="background:
                           rgb(49, 65, 70); border-radius: 5px">
-																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
-																								</div>
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																												</div>
+																								</a>
 																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
 																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black"
 																																style="animation-delay: 0ms">Book Name
