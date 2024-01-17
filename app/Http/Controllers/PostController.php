@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 
 class PostController extends Controller
@@ -62,11 +64,29 @@ class PostController extends Controller
         if($validate->fails()){
             return redirect('Login')-> withErrors($validate);
         }
-        else
-        $user = User::where('email',$request->email)->first();
+        // else
+        // $user = User::where('email',$request->email)->first();
+    $user = User::where('email', $request->email)->first();
+
+    if ($user && Hash::check($request->password, $user->password)) {
         return view(('after_login_home_page'),compact('user'));
-        // header("Location: /after_login_view_all");
         exit();
+    // Password is correct
+    // Proceed with login or other actions
+    } else {
+//    return redirect()->back()->withErrors([
+//     'password' => 'The password you entered is incorrect.',
+// ]);
+
+Session::put('error_messages', [
+    'password' => 'The password you entered is incorrect.',
+]);
+return redirect()->back();
+
+    //     return view(('after_login_home_page'),compact('user'));
+    //     // header("Location: /after_login_view_all");
+    //     exit();
     }
 
+    }
 }
