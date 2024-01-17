@@ -66,9 +66,8 @@
                                 <td>{{ \Carbon\Carbon::parse($item->bk_rel_date)->format('d-m-Y') }}</td>
                                 <td>{{ $item->bk_price }}</td>
                                 <td>{{ $item->bk_quantity }}</td>
-                                <td>Yes</td>
-                                <td><button class="btn btn-outline-warning">Edit</button></td>
-                                <td><button class="btn btn-outline-danger">Del</button></td>
+                                <td><a href="{{route('bkEditPage',$item->id)}}"><button class="btn btn-outline-warning">Edit</button></a></td>
+                                <td><a href="{{route('bkDelete',$item->id)}}"><button class="btn btn-outline-danger">Del</button></a></td>
                             </tr>
                     @endforeach
                     </tbody>

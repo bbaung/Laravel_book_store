@@ -40,6 +40,25 @@ class AdminController extends Controller
         return view('admin.admin_inventory_status',compact('books'));
     }
 
+    public function bkDelete($id){
+        Book::where('id',$id)->delete();
+        return redirect()->route('admin_inventory_status');
+    }
+
+    public function bkEditPage($id){
+        $book = Book::where('id',$id)->first();
+        return view('admin/admin_edit_book',compact('book'));
+    }
+    public function edit_book_function(Request $request,$id){
+        $data = $this->getBookData($request);
+        $bk_id = Book::select('bk_id')->where('id',$id)->get();
+        $bk_id = $bk_id->toArray();
+        $bk_id= $bk_id['0'];
+        $data['bk_id'] = $bk_id['bk_id'];
+        Book::where('id',$id)->update($data);
+        return redirect()->route('admin_inventory_status');
+    }
+
 
 
 

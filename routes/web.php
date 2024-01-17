@@ -65,6 +65,10 @@ Route::post('/admin/addBookFunction',[AdminController::class,'add_book_function'
 Route::get('/admin/editBook', [AdminController::class, 'edit_book'])->name('admin_edit_book');
 
 Route::get('/admin/inventoryStatus', [AdminController::class, 'inventory'])->name('admin_inventory_status');
+Route::get('/admin/bkDelete/{id}',[AdminController::class,'bkDelete'])->name('bkDelete');
+
+Route::get('admin/bkEdit/{id}',[AdminController::class,'bkEditPage'])->name('bkEditPage');
+Route::post('/admin/editBookFunction/{id}',[AdminController::class,'edit_book_function'])->name('admin_edit_book_function');
 
 Route::get('/admin/header', function () {
     return view('admin.admin_header');
