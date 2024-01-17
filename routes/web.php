@@ -59,7 +59,7 @@ Route::get('/admin/history', [AdminController::class, 'history'])->name('admin_h
 Route::get('/admin/orderstatus', [AdminController::class, 'order_status'])->name('admin_order_status');
 
 Route::get('/admin/addBook', [AdminController::class, 'add_book'])->name('admin_add_book');
-
+Route::post('/admin/addBookFunction',[AdminController::class,'add_book_function'])->name('admin_add_book_function');
 
 
 Route::get('/admin/editBook', [AdminController::class, 'edit_book'])->name('admin_edit_book');

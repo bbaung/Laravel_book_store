@@ -12,19 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
-            
-            $table->id(); 
-            $table->string('user_id');// Default auto-incrementing primary key
-            $table->string('bk_id')->unique(); 
+
+            $table->id();
+            // $table->string('user_id');// Default auto-incrementing primary key
+            $table->string('bk_id')->unique()->nullable();
             $table->string('bk_name');
             $table->string('bk_author');
             $table->string('bk_cati');
             $table->date('bk_rel_date');
             $table->integer('bk_price');
             $table->integer('bk_quantity');
-            $table->text('bk_review');
+            $table->text('bk_review')->default('1');
             $table->timestamps();
-            
+
         });
     }
 
