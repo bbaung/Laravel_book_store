@@ -9,7 +9,7 @@
 
 								<div class="row pt-5">
 												<h3 class="d-inline col-6">Book Name</h3>
-												<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('home_page') }}">Home Menu</a>
+												<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('after_login_home_page') }}">Home Menu</a>
 								</div>
 								<div class="row pt-3">
 												<div class="col-3">
@@ -58,7 +58,7 @@
 																																								mmk</button>
 																																				<button type="button" class="btn btn-sm btn-secondary mx-2 my-3" disabled>100
 																																								stock</button>
-																																				<a href="{{ route('Login') }}"><button type="button"
+																																				<a href="{{ route('cart') }}"><button type="button"
 																																												class="btn btn-sm btn-outline-success mx-2 my-3">Add to
 																																												cart</button></a>
 

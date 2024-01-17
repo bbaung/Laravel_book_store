@@ -169,7 +169,7 @@
 
 																<div class="nav-item mx-auto me-5">
 																				<!--<button type="button" class="btn btn-outline-secondary" href="/Login_in">-->
-																				<a href="{{ route('Login') }}"> <button type="submit" class="btn btn-outline-secondary">
+																				<a href="{{ route('cart') }}"> <button type="submit" class="btn btn-outline-secondary">
 																												<i class="fas fa-user-circle me-1"></i> login here
 																								</button>
 																				</a>
@@ -183,9 +183,8 @@
 												</div>
 								</nav>
 </section> --}}
-@extends('after_login_header')
+@extends('header')
 @section('header_footer')
-@parent
 				<!-- --dev_phyoewai start-- -->
 				<!-- first section start -->
 				<section class="container-fluid container">
@@ -273,11 +272,12 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																																								class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);">--></i></button>
-																												</div>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart</button></a>
+																																<!--<i
+																																																																																																																																																																								class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);">--></i></button>
+																												</div></a>
 																								</div>
 																				</div>
 																</div>
@@ -308,86 +308,92 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																																				class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
-																</div>
+																				< </div>
 
-																<div class="col-md-3 dev-center">
+																								<div class="col-md-3 dev-center">
 
-																				<div class="card" style="background: #eff2f6">
-																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
-																								</div>
-																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
-																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
-																																Name
-																																<hr style="background: blue" class="col-md-8 offset-2">
-																												</h3>
-																												{{-- <p class="text-warning text-center">
+																												<div class="card" style="background: #eff2f6">
+																																<div class="card-header text-center"
+																																				style="background: rgb(49, 65, 70); border-radius: 5px">
+																																				<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																																</div>
+																																<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																				<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																								Name
+																																								<hr style="background: blue" class="col-md-8 offset-2">
+																																				</h3>
+																																				{{-- <p class="text-warning text-center">
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star-half-stroke"></span>
 																												</p> --}}
-																												<p class="bigtitle text-center text-black" style="font-size: larger;">
-																																<!--     not work      -->
-																																<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
-																																2500ks <span
-																																				style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-																												</p>
-																												<!-- Button -->
-																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																																class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																				<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																								<!--     not work      -->
+																																								<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																								2500ks <span
+																																												style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																				</p>
+																																				<!-- Button -->
+																																				<div class="col-md-6 offset-md-4">
+																																								<a href="{{ route('cart') }}"><button type="button"
+																																																class="btn btn-warning ms- animate__animated animate__tada"
+																																																style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																												</button></a>
+
+																																				</div>
+																																</div>
 																												</div>
 																								</div>
-																				</div>
-																</div>
 
-																<div class="col-md-3 dev-right">
+																								<div class="col-md-3 dev-right">
 
-																				<div class="card" style="background: #eff2f6">
-																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
-																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
-																								</div>
-																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
-																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
-																																Name
-																																<hr style="background: blue" class="col-md-8 offset-2">
-																												</h3>
-																												{{-- <p class="text-warning text-center">
+																												<div class="card" style="background: #eff2f6">
+																																<div class="card-header text-center"
+																																				style="background: rgb(49, 65, 70); border-radius: 5px">
+																																				<img src="{{ asset('assets/view/image/vap-r.png') }}" alt=""
+																																								class="img-fluid">
+																																</div>
+																																<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																																				<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																								Name
+																																								<hr style="background: blue" class="col-md-8 offset-2">
+																																				</h3>
+																																				{{-- <p class="text-warning text-center">
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star"></span>
 																																<span class="fa-solid fa-star-half-stroke"></span>
 																												</p> --}}
-																												<p class="bigtitle text-center text-black" style="font-size: larger;">
-																																<!--     not work      -->
-																																<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
-																																2500ks <span
-																																				style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
-																												</p>
-																												<!-- Button -->
-																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																				<p class="bigtitle text-center text-black" style="font-size: larger;">
+																																								<!--     not work      -->
+																																								<i class="fa-solid fa-money-check-dollar" style="color: rgb(235, 197, 29);"></i>
+																																								2500ks <span
+																																												style="text-decoration: line-through;font-family: Cambria,Arial,SansSerif;">4500ks</span>
+																																				</p>
+																																				<!-- Button -->
+																																				<div class="col-md-6 offset-md-4">
+																																								<a href="{{ route('cart') }}"><button type="button"
+																																																class="btn btn-warning ms- animate__animated animate__tada"
+																																																style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																												</button></a>
+
+																																				</div>
+																																</div>
 																												</div>
 																								</div>
-																				</div>
 																</div>
 												</div>
-								</div>
 				</section>
 				<!-- second section end -->
 
@@ -425,10 +431,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
@@ -460,10 +467,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
@@ -495,10 +503,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
@@ -530,10 +539,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
@@ -577,10 +587,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
@@ -612,10 +623,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color:rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
@@ -647,10 +659,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
@@ -682,10 +695,11 @@
 																												</p>
 																												<!-- Button -->
 																												<div class="col-md-6 offset-md-4">
-																																<button type="button" class="btn btn-warning ms- animate__animated animate__tada"
-																																				style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
-																																				<!--<i
-																																																												class="fa-solid fa-bag-shopping" style="color: rgb(39, 59, 61);"></i>--></button>
+																																<a href="{{ route('cart') }}"><button type="button"
+																																								class="btn btn-warning ms- animate__animated animate__tada"
+																																								style="font-family:Harrington; animation-delay: 1000ms;">Add to cart
+																																				</button></a>
+
 																												</div>
 																								</div>
 																				</div>
