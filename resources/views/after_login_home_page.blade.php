@@ -1,195 +1,343 @@
 <h1>
-				After login home page
+				Home page
 </h1>
-<!DOCTYPE html>
-<html lang="en">
 
-				<head>
-								<meta charset="UTF-8">
-								<meta name="viewport" content="width=device-width, initial-scale=1.0">
-								<title>Use with CDN Link</title>
-								<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-								<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-												integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-								<style>
-												.col-2:hover {
-																transform: scale(1.05);
-																transition: all 0.5s ease;
-												}
+@extends('header')
 
-												.col-2 {
-																transition: transform 0.3s ease;
-												}
+@section('style')
+				<link rel="stylesheet"
+								href="{{ asset('assets/js/css/home_page.css') }}
+@endsection
 
-												body {
-																height: 100%;
-																margin: 0;
-																padding: 0;
-												}
+@section('header_footer')
+{{-- <div class="container-fluid
+								align-self-center w-75 bg-body-tertiary main-body">
 
-												.wrapper {
-																min-height: 100%;
-																margin-bottom: -50px;
-																/* Height of the footer */
-												}
+				<div class="row mt-5">
+								<h3 class="d-inline col-6"></h3>
+								<a class="d-inline-block fs-5 col-6 text-end" href=""></a>
+				</div>
+				<div class="row mt-5">
+								<h3 class="d-inline col-6"></h3>
+								<a class="d-inline-block fs-5 col-6 text-end" href=""></a>
+				</div>
+				<div class="row mt-5">
+								<h3 class="d-inline col-6">Best Selling Books in 2023</h3>
+								<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
+				</div>
+				<div class="row my-5">
+								<div class="col-2">
+												<div class="card" style="width: 7rem;">
+																<a href="{{ route('book_review') }}">
+																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="...">
+																</a>
 
-												.footer {
-																height: 75px;
-																padding: 15px 0;
-																position: relative;
-																bottom: 0;
-																width: 100%;
-												}
+												</div>
+								</div>
+								<div class="col-2">
+												<div class="card" style="width: 7rem;">
+																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg" class="card-img-top"
+																				alt="...">
+												</div>
+								</div>
+								<div class="col-2">
+												<div class="card" style="width: 7rem;">
+																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg" class="card-img-top"
+																				alt="...">
+												</div>
+								</div>
+								<div class="col-2">
+												<div class="card" style="width: 7rem;">
+																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg" class="card-img-top"
+																				alt="...">
+												</div>
+								</div>
+								<div class="col-2">
+												<div class="card" style="width: 7rem;">
+																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg" class="card-img-top"
+																				alt="...">
+												</div>
+								</div>
+								<div class="col-2">
+												<div class="card" style="width: 7rem;">
+																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg" class="card-img-top"
+																				alt="...">
+												</div>
+								</div>
+								<div class="row mt-5">
+												<h3 class="d-inline col-6">Best Reviewed Books </h3>
+												<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
+								</div>
+								<div class="row my-5">
+												<div class="col-2">
+																<div class="card" style="width: 7rem;">
+																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="...">
+																</div>
+												</div>
+												<div class="col-2">
+																<div class="card" style="width: 7rem;">
+																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="...">
+																</div>
+												</div>
+												<div class="col-2">
+																<div class="card" style="width: 7rem;">
+																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="...">
+																</div>
+												</div>
+												<div class="col-2">
+																<div class="card" style="width: 7rem;">
+																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="...">
+																</div>
+												</div>
+												<div class="col-2">
+																<div class="card" style="width: 7rem;">
+																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="...">
+																</div>
+												</div>
+												<div class="col-2">
+																<div class="card" style="width: 7rem;">
+																				<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
+																								class="card-img-top" alt="...">
+																</div>
+												</div>
+								</div>
+				</div>
+				</div>
+				</div> --}}
 
-												.navbar-brand {
-																text-decoration: none;
-																transition: text-decoration 0.5s ease;
-												}
+                <!-- --dev_phyoewai start-- -->
+				<!-- first section start -->
+				<section class="container-fluid
+								container">
+				<div class="wrapper my-2 py-2">
 
-												.navbar-brand:hover {
-																text-decoration: underline;
-												}
+								<div class="container-fluid row mt-3 py-1">
 
-												.main-body {
-																padding-top: 140px;
-												}
-								</style>
-				</head>
+												<div class="col-md-7">
 
-				<body>
-								<div class="wrapper d-flex flex-column">
-												<div class="w-100 fixed-top mb-5" style="z-index: 1;">
-																<nav class="navbar navbar-expand-lg bg-body-tertiary pt-3">
-																				<div class="container-fluid">
-																								<a class="navbar-brand ms-5" href="#">Book Shop</a>
-																								<div class="navbar-collapse collapse" id="navbarSupportedContent">
-																												<form class="d-flex w-50 mx-auto" role="search">
-																																<input class="form-control me-2" type="" placeholder="Search"
-																																				aria-label="Search">
-																																<button class="btn btn-outline-secondary" type="submit">Search</button>
-																												</form>
+																<div id="buttons" class="my-4">
+																				<button class="button-value" onclick="filterProduct('all')">All</button>
+																				<button class="button-value" onclick="filterProduct('Topwear')">
+																								Science
+																				</button>
+																				<button class="button-value" onclick="filterProduct('Bottomwear')">
+																								Romance
+																				</button>
+																				<button class="button-value" onclick="filterProduct('Jacket')">
+																								Advanture
+																				</button>
+																				<button class="button-value" onclick="filterProduct('Watch')">
+																								Horror
+																				</button>
+																</div>
+
+												</div>
+
+												<div class="col-md-5">
+																<div id="search-container" class="">
+																				<div class="row">
+
+																								<div class="col-md-8 my-1">
+																												<input type="search" id="search-input" placeholder="Search book name here.." />
 																								</div>
 
-																								<div class="nav-item mx-auto me-5">
-																												<button type="button" class="btn btn-outline-secondary">
-																																<i class="fas fa-user-circle me-1"></i> My Account
-																												</button>
+																								<div class="col-md-4 col-ms-6">
+																												<button id="search">Search</button>
 																								</div>
-																								<div class="nav-item mx-auto me-5">
-																												<button type="button" class="btn btn-outline-secondary"><i
-																																				class="fa-sharp fa-solid fa-cart-shopping fa-beat-fade"></i> My Cart</button>
-																								</div>
-																				</div>
-																</nav>
 
-																<div class="navbar navbar-expand-lg navbar-light bg-light">
-																				<div class="container-fluid align-self-center w-75">
-																								<a class="navbar-brand" href="#">Fiction</a>
-																								<a class="navbar-brand" href="#">Science</a>
-																								<a class="navbar-brand" href="#">Action</a>
-																								<a class="navbar-brand" href="#">Romance</a>
 																				</div>
 																</div>
 												</div>
-												<div class="container-fluid align-self-center w-75 bg-body-tertiary main-body">
-																<div class="row">
-																				<h3 class="d-inline col-6">Best Selling Books in 2023 </h3>
-																				<a class="d-inline-block fs-5 col-6 text-end" href="#">View All</a>
+
+								</div>
+
+								<!--div id="products" class="my-4"></div-->
+
+				</div>
+
+				</section>
+				<!-- first section end -->
+				<!-- --dev_phyoewai end-- -->
+
+				<!-- second section start -->
+				<section class="section-data pb-1">
+
+								<div class="container-fluid container py-1 pb-1">
+												<div class="row mt-5">
+																<h3 class="d-inline col-6">Best Selling Books in 2023</h3>
+																<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
+												</div>
+
+												<div class="row pb-1">
+
+																<div class="col-md-3 dev-left">
+
+																				<div class="card" style="background: #eff2f6">
+																								<a href="{{ route('book_review') }}">
+																												<div class="card-header text-center"
+																																style="background:
+                          rgb(49, 65, 70); border-radius: 5px">
+																																<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																												</div>
+																								</a>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black"
+																																style="animation-delay: 0ms">Book Name
+																																<hr class="col-md-8 offset-2">
+																												</h3>
+
+																								</div>
+																				</div>
 																</div>
-																<div class="row my-5">
-																				<div class="col-2">
-																								<div class="card" style="width: 7rem;">
-																												<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																class="card-img-top" alt="...">
+
+																<div class="col-md-3 dev-center">
+
+																				<div class="card" style="background: #eff2f6">
+																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																								</div>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																Name
+																																<hr style="background: blue" class="col-md-8 offset-2">
+																												</h3>
+
 																								</div>
 																				</div>
-																				<div class="col-2">
-																								<div class="card" style="width: 7rem;">
-																												<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																class="card-img-top" alt="...">
+																</div>
+
+																<div class="col-md-3 dev-center">
+
+																				<div class="card" style="background: #eff2f6">
+																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																								</div>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																Name
+																																<hr style="background: blue" class="col-md-8 offset-2">
+																												</h3>
+
 																								</div>
 																				</div>
-																				<div class="col-2">
-																								<div class="card" style="width: 7rem;">
-																												<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																class="card-img-top" alt="...">
+																</div>
+
+																<div class="col-md-3 dev-right">
+
+																				<div class="card" style="background: #eff2f6">
+																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
 																								</div>
-																				</div>
-																				<div class="col-2">
-																								<div class="card" style="width: 7rem;">
-																												<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																class="card-img-top" alt="...">
-																								</div>
-																				</div>
-																				<div class="col-2">
-																								<div class="card" style="width: 7rem;">
-																												<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																class="card-img-top" alt="...">
-																								</div>
-																				</div>
-																				<div class="col-2">
-																								<div class="card" style="width: 7rem;">
-																												<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																class="card-img-top" alt="...">
-																								</div>
-																				</div>
-																				<div class="row mt-5">
-																								<h3 class="d-inline col-6">Best Reviewed Books</h3>
-																								<a class="d-inline-block fs-5 col-6 text-end" href="#">View All</a>
-																				</div>
-																				<div class="row my-5">
-																								<div class="col-2">
-																												<div class="card" style="width: 7rem;">
-																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																				class="card-img-top" alt="...">
-																												</div>
-																								</div>
-																								<div class="col-2">
-																												<div class="card" style="width: 7rem;">
-																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																				class="card-img-top" alt="...">
-																												</div>
-																								</div>
-																								<div class="col-2">
-																												<div class="card" style="width: 7rem;">
-																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																				class="card-img-top" alt="...">
-																												</div>
-																								</div>
-																								<div class="col-2">
-																												<div class="card" style="width: 7rem;">
-																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																				class="card-img-top" alt="...">
-																												</div>
-																								</div>
-																								<div class="col-2">
-																												<div class="card" style="width: 7rem;">
-																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																				class="card-img-top" alt="...">
-																												</div>
-																								</div>
-																								<div class="col-2">
-																												<div class="card" style="width: 7rem;">
-																																<img src="https://i.pinimg.com/originals/20/2b/18/202b1875a6513529150b232668ce0a4d.jpg"
-																																				class="card-img-top" alt="...">
-																												</div>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																Name
+																																<hr style="background: blue" class="col-md-8 offset-2">
+																												</h3>
+
 																								</div>
 																				</div>
 																</div>
 												</div>
 								</div>
-								</div>
-								<footer class="footer bg-info-subtle mt-auto">
-												<div class="container text-center">
-																<span class="text-muted">&copy; 2023 Bookshop.com. All Rights Reserved.</span>
-												</div>
-								</footer>
-				</body>
-				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-								integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-				</script>
+				</section>
+				<!-- second section end -->
 
-</html>
-<div>
-				<!-- Do what you can, with what you have, where you are. - Theodore Roosevelt -->
-</div>
+				<!-- third section start -->
+				<section class="section-data pb-2">
+								<div class="container-fluid container py-1 pb-1 pt-1">
+												<div class="row mt-5">
+																<h3 class="d-inline col-6">Best Reviewed Books </h3>
+																<a class="d-inline-block fs-5 col-6 text-end" href="{{ route('view_all') }}">View All</a>
+												</div>
+												<div class="row">
+
+																<div class="col-md-3 dev-left">
+
+																				<div class="card" style="background: #eff2f6">
+																								<div class="card-header text-center"
+																												style="background:
+                        rgb(49, 65, 70); border-radius: 5px">
+																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																								</div>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black"
+																																style="animation-delay: 0ms">Book Name
+																																<hr class="col-md-8 offset-2">
+																												</h3>
+
+																								</div>
+																				</div>
+																</div>
+
+																<div class="col-md-3 dev-center">
+
+																				<div class="card" style="background: #eff2f6">
+																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																								</div>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																Name
+																																<hr style="background: blue" class="col-md-8 offset-2">
+																												</h3>
+
+																								</div>
+																				</div>
+																</div>
+
+																<div class="col-md-3 dev-center">
+
+																				<div class="card" style="background: #eff2f6">
+																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																								</div>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																Name
+																																<hr style="background: blue" class="col-md-8 offset-2">
+																												</h3>
+
+																								</div>
+																				</div>
+																</div>
+
+																<div class="col-md-3 dev-right">
+
+																				<div class="card" style="background: #eff2f6">
+																								<div class="card-header text-center" style="background: rgb(49, 65, 70); border-radius: 5px">
+																												<img src="{{ asset('assets/view/image/vap-r.png') }}" alt="" class="img-fluid">
+																								</div>
+																								<div class="card-block py-3 pb-2" style="background: #eff2f6">
+																												<h3 class="bigtitle animate__animated animate__rubberBand text-center text-black">Book
+																																Name
+																																<hr style="background: blue" class="col-md-8 offset-2">
+																												</h3>
+
+																								</div>
+																				</div>
+																</div>
+												</div>
+								</div>
+				</section>
+				<!-- third section end -->
+
+				<!-- pagination section start -->
+				{{-- <section class="container mt-4">
+								<div class="pagination col-md-4 offset-md-5">
+												<ul id="paginationList">
+																<!-- Pagination links will be dynamically added here -->
+												</ul>
+								</div>
+				</section> --}}
+				<!-- pagination section end -->
+
+				<div class="col-md-2 container mt-4 py-4" style="color: rgb(151, 163, 172);font-style: italic;">
+								<h6></h6>
+				</div>
+@endsection
