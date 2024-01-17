@@ -36,6 +36,7 @@
 																																								<h6 class="mt-4">Release Date</h5>
 																																												<h6 class="mt-4">Price</h5>
 																																																<h6 class="mt-4">Quantity</h5>
+																																																				<h6 class="mt-4">Book review</h5>
 																				</div>
 																				<div class="col-md-3 edit_book mt-4">
 																								<input type="text" name="bookId" class="form-control form-control-sm mt-3 border"
@@ -54,6 +55,9 @@
 																												placeholder="input">
 																								<input type="text" name="price" class="form-control form-control-sm mt-2" placeholder="input">
 																								<input type="text" name="quantity" class="form-control form-control-sm mt-2" placeholder="input">
+																								<textarea name="review" class="form-control form-control-sm mt-3 border" id="exampleFormControlTextarea1"
+																								    rows="3" placeholder="input"></textarea>
+
 																				</div>
 
 																				<div class="col-md-6">
@@ -76,8 +80,8 @@
 																												<button type="submit" class="btn btn-success edit_book">Save</button>
 																								</div>
 																								<!--div class="col-md-2 offset-1">
-																																																																																<button class="btn btn-info edit_book">Exit</button>
-																																																																												</div-->
+																																																																																																																																<button class="btn btn-info edit_book">Exit</button>
+																																																																																																																												</div-->
 																								<div class="col-md-2 offset-1">
 																												<button type="button" class="btn btn-danger edit_book">Delete</button>
 																								</div>
